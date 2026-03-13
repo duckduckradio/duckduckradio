@@ -78,6 +78,14 @@ display:none;
 <script>
 
 function playRadio(){
+var radio = document.getElementById("radio");
+
+if (radio.paused){
+radio.play();
+}else{
+radio.pause();
+}
+}
 document.getElementById("radio").play();
 }
 
