@@ -216,34 +216,8 @@ async function updateSong(){
     const response = await fetch("https://sv2.famcast.co.za/json/stream/duckduck-radio");
     const data = await response.json();
 
-    let artist = "";
-    let title = "";
-    let full = "";
-
-    if (data.song){
-      artist = data.song.artist || "";
-      title = data.song.title || "";
-      full = data.song.text || data.song.name || "";
-    }
-
-    if (!artist && !title && data.now_playing){
-      artist = data.now_playing.artist || "";
-      title = data.now_playing.title || "";
-      full = data.now_playing.text || data.now_playing.song || "";
-    }
-
-    if (!artist && !title && data.currenttrack){
-      full = data.currenttrack;
-    }
-
-    if (!artist && !title && data.title){
-      full = data.title;
-    }
-
-    if (artist || title){
-      songtitle.innerText = (artist + " - " + title).replace(/^ - | - $/g, "");
-    } else if (full){
-      songtitle.innerText = full;
+    if (data.nowplaying){
+      songtitle.innerText = data.nowplaying;
     } else {
       songtitle.innerText = "Live stream";
     }
