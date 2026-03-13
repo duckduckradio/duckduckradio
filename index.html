@@ -76,23 +76,22 @@ display:none;
 </div>
 
 <script>
-
-function playRadio(){
 var radio = document.getElementById("radio");
-radio.src = "https://sv2.famcast.co.za/stream/duckduck-radio";
+var streamUrl = "https://sv2.famcast.co.za/stream/duckduck-radio";
+var isPlaying = false;
 
 function playRadio(){
-
-if (radio.paused){
+if (!isPlaying){
+radio.src = streamUrl;
 radio.play();
-}else{
+isPlaying = true;
+} else {
 radio.pause();
+radio.removeAttribute("src");
+radio.load();
+isPlaying = false;
 }
-
 }
-document.getElementById("radio").play();
-}
-
 </script>
 
 </body>
