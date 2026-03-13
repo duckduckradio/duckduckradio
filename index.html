@@ -4,7 +4,6 @@
 <title>Duck Duck Radio</title>
 
 <style>
-
 body{
 margin:0;
 height:100vh;
@@ -16,29 +15,20 @@ background-size:cover;
 background-position:center;
 font-family:Arial;
 }
-
-button{
-font-size:28px;
-padding:20px 40px;
-border:none;
-border-radius:12px;
-background:#ffd000;
-cursor:pointer;
-}
-
-button:hover{
-background:#ffb700;
-}
-
 </style>
 
 </head>
 
-<body>
+<body style="text-align:center;">
 
-<button onclick="window.open('https://sv2.famcast.co.za/stream/duckduck-radio')">
-▶ PLAY DUCK DUCK RADIO
-</button>
+<div style="background:rgba(0,0,0,0.45); padding:30px; border-radius:18px;">
+  <h1 style="color:white; margin-top:0;">Duck Duck Radio</h1>
+
+  <audio controls autoplay style="width:320px; max-width:90%;">
+    <source src="https://sv2.famcast.co.za/stream/duckduck-radio" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
 
 </body>
 </html>
