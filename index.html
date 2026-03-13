@@ -21,6 +21,23 @@ font-family:Arial, sans-serif;
 text-align:center;
 padding:20px;
 box-sizing:border-box;
+.volume-wrap{
+margin-top:20px;
+color:white;
+}
+
+.volume-label{
+display:block;
+margin-bottom:8px;
+font-size:14px;
+font-weight:bold;
+}
+
+#volumeSlider{
+width:220px;
+max-width:90%;
+cursor:pointer;
+}  
 }
 
 .box{
@@ -234,8 +251,10 @@ async function updateSong(){
 
 updateSong();
 setInterval(updateSong, 15000);
-setInterval(updateSong, 15000);
 
+function setVolume(value){
+radio.volume = value;
+}
 async function shareStation(){
   const shareData = {
     title: "Duck Duck Radio",
