@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Duck Duck Radio</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -62,6 +63,25 @@ cursor:pointer;
 background:#1ed760;
 }
 
+.links{
+margin-top:25px;
+}
+
+.linkbtn{
+display:inline-block;
+margin:8px;
+padding:10px 20px;
+background:#ffd000;
+color:black;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.linkbtn:hover{
+background:#ffb700;
+}
+
 audio{
 display:none;
 }
@@ -103,6 +123,18 @@ font-size:38px;
 <div class="tagline">Broadcasting from Stilbaai</div>
 
 <button id="playbtn" class="playbutton" onclick="playRadio()">▶</button>
+
+<div class="links">
+
+<a href="https://www.facebook.com/profile.php?id=61588258871807" target="_blank" class="linkbtn">
+Facebook
+</a>
+
+<a href="https://wa.me/27XXXXXXXXX" target="_blank" class="linkbtn">
+Request a Song
+</a>
+
+</div>
 
 <audio id="radio"></audio>
 
