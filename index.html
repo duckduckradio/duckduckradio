@@ -79,12 +79,16 @@ display:none;
 
 function playRadio(){
 var radio = document.getElementById("radio");
+radio.src = "https://sv2.famcast.co.za/stream/duckduck-radio";
+
+function playRadio(){
 
 if (radio.paused){
 radio.play();
 }else{
 radio.pause();
 }
+
 }
 document.getElementById("radio").play();
 }
