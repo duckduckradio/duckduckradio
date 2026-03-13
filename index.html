@@ -178,6 +178,7 @@ font-size:38px;
 <div class="links">
   <a href="https://www.facebook.com/profile.php?id=61588258871807" target="_blank" class="linkbtn">Facebook</a>
   <a href="https://wa.me/27825541599" target="_blank" class="linkbtn">Request a Song</a>
+  <button onclick="shareStation()" class="linkbtn">Share This Station</button>
 </div>
 
 <audio id="radio"></audio>
@@ -229,6 +230,30 @@ async function updateSong(){
 
 updateSong();
 setInterval(updateSong, 15000);
+setInterval(updateSong, 15000);
+
+async function shareStation(){
+  const shareData = {
+    title: "Duck Duck Radio",
+    text: "Listen live to Duck Duck Radio",
+    url: "https://duckduckradio.github.io/duckduckradio"
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+    }
+  } else {
+    try {
+      await navigator.clipboard.writeText(shareData.url);
+      alert("Station link copied to clipboard");
+    } catch (err) {
+      alert("Copy this link: " + shareData.url);
+    }
+  }
+}
+ 
 </script>
 
 </body>
