@@ -2,26 +2,35 @@
 <html>
 <head>
 <title>Duck Duck Radio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
 body{
 margin:0;
-height:100vh;
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background-image:url("duck-duck.jpg");
+background-image:
+linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+url("duck-duck.jpg");
 background-size:cover;
 background-position:center;
+background-repeat:no-repeat;
 font-family:Arial, sans-serif;
 text-align:center;
+padding:20px;
+box-sizing:border-box;
 }
 
 .box{
-background:rgba(0,0,0,0.55);
+background:rgba(0,0,0,0.35);
 padding:40px;
 border-radius:20px;
+max-width:90%;
+width:500px;
+box-sizing:border-box;
 }
 
 .logo{
@@ -29,6 +38,7 @@ font-size:56px;
 font-weight:bold;
 color:#ffd000;
 margin-bottom:10px;
+line-height:1.1;
 }
 
 .tagline{
@@ -56,6 +66,31 @@ audio{
 display:none;
 }
 
+@media (max-width: 600px){
+
+.box{
+padding:25px;
+width:100%;
+}
+
+.logo{
+font-size:38px;
+}
+
+.tagline{
+font-size:17px;
+margin-bottom:20px;
+}
+
+.playbutton{
+width:95px;
+height:95px;
+border-radius:50%;
+font-size:38px;
+}
+
+}
+
 </style>
 
 </head>
@@ -70,8 +105,6 @@ display:none;
 <button id="playbtn" class="playbutton" onclick="playRadio()">▶</button>
 
 <audio id="radio"></audio>
-<source src="https://sv2.famcast.co.za/stream/duckduck-radio" type="audio/mpeg">
-</audio>
 
 </div>
 
