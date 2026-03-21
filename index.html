@@ -216,6 +216,20 @@ var btn = document.getElementById("playbtn");
 var livebadge = document.getElementById("livebadge");
 var songtitle = document.getElementById("songtitle");
 
+radio.addEventListener("error", reconnectStream);
+radio.addEventListener("stalled", reconnectStream);
+radio.addEventListener("ended", reconnectStream);
+
+function reconnectStream(){
+  if (isPlaying){
+    setTimeout(function(){
+      radio.src = streamUrl + "?t=" + new Date().getTime();
+      radio.load();
+      radio.play().catch(function(){});
+    }, 3000);
+  }
+}
+
 function playRadio(){
   if (!isPlaying){
     radio.src = streamUrl;
