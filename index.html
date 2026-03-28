@@ -6,6 +6,7 @@
 <link rel="apple-touch-icon" href="duck_radio_icon_180.png">
 <link rel="icon" href="duck_radio_icon_192.png">
 <meta name="theme-color" content="#ffd000">
+
 <style>
 body{
 margin:0;
@@ -93,6 +94,9 @@ color:white;
 font-size:16px;
 line-height:1.4;
 min-height:44px;
+background:rgba(0,0,0,0.3);
+padding:12px;
+border-radius:10px;
 }
 
 .nowplaying strong{
@@ -120,8 +124,21 @@ cursor:pointer;
 transition:all 0.2s ease;
 }
 
+/* Hover effect */
+.playbutton:hover{
+transform:scale(1.05);
+background:linear-gradient(145deg, #22d060, #18b150);
+}
+
+/* Click effect */
 .playbutton:active{
 transform:scale(0.95);
+}
+
+/* PLAYING glow effect */
+.playbutton.playing{
+box-shadow:0 0 25px rgba(29,185,84,0.8), 0 8px 20px rgba(0,0,0,0.4);
+background:linear-gradient(145deg, #22d060, #18b150);
 }
 
 .links{
@@ -210,7 +227,7 @@ font-size:38px;
   <a href="https://www.facebook.com/profile.php?id=61588258871807" target="_blank" class="linkbtn">Facebook</a>
   <a href="https://wa.me/27825541599" target="_blank" class="linkbtn">Request a Song</a>
   <button onclick="shareStation()" class="linkbtn">Share This Station</button>
-  <button onclick="addToHomeScreen()" class="linkbtn">Add to Home Screen</button>
+  <button onclick="addToHomeScreen()" class="linkbtn">📱 Add to Home Screen</button>
 </div>
 
 <audio id="radio"></audio>
@@ -246,6 +263,7 @@ function playRadio(){
     radio.src = streamUrl;
     radio.play();
     btn.innerHTML = "❚❚";
+    btn.classList.add("playing");
     livebadge.innerHTML = "LIVE";
     livebadge.classList.add("on");
     isPlaying = true;
@@ -254,6 +272,7 @@ function playRadio(){
     radio.removeAttribute("src");
     radio.load();
     btn.innerHTML = "▶";
+    btn.classList.remove("playing");
     livebadge.innerHTML = "OFF AIR";
     livebadge.classList.remove("on");
     isPlaying = false;
@@ -293,8 +312,7 @@ async function shareStation(){
   if (navigator.share) {
     try {
       await navigator.share(shareData);
-    } catch (err) {
-    }
+    } catch (err) {}
   } else {
     try {
       await navigator.clipboard.writeText(shareData.url);
@@ -311,9 +329,9 @@ function addToHomeScreen(){
   if (/iphone|ipad|ipod/.test(ua)) {
     alert("On iPhone: open this site in Safari, tap Share, then tap Add to Home Screen.");
   } else if (/android/.test(ua)) {
-    alert("On Android: tap your browser menu, then choose Add to Home screen. Some browsers may show Install app instead.");
+    alert("On Android: tap your browser menu, then choose Add to Home screen.");
   } else {
-    alert("To create a shortcut, open your browser menu and look for Add to Home Screen or Install.");
+    alert("Use your browser menu and select Add to Home Screen.");
   }
 }
 </script>
