@@ -117,15 +117,21 @@ box-shadow:0 6px 16px rgba(0,0,0,0.3);
 .gallery-photo{
 height:250px;
 display:flex;
-align-items:flex-start;
+align-items:center;
 justify-content:center;
 text-align:center;
-padding:35px 20px 20px 20px;
+padding:16px;
 background:
 linear-gradient(rgba(255,208,0,0.15), rgba(255,208,0,0.15)),
 rgba(255,255,255,0.08);
 border-bottom:1px solid rgba(255,255,255,0.08);
 }
+.gallery-photo img{
+max-width:100%;
+max-height:100%;
+object-fit:contain;
+border-radius:12px;
+}  
   
 .gallery-photo span{
 display:inline-block;
