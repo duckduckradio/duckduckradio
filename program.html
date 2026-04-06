@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Duck Duck Radio Program</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" href="duck_radio_icon_180.png">
+<link rel="icon" href="duck_radio_icon_192.png">
+<meta name="theme-color" content="#ffd000">
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background-image:
+linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+url("duck-duck.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+background-repeat:no-repeat;
+color:white;
+}
+
+.page-overlay{
+min-height:100vh;
+background:rgba(0,0,0,0.35);
+padding:20px 12px 40px 12px;
+}
+
+.topbar{
+max-width:1200px;
+margin:0 auto 20px auto;
+display:flex;
+justify-content:center;
+}
+
+.backbtn{
+display:inline-block;
+padding:12px 24px;
+background:#ffd000;
+color:black;
+text-decoration:none;
+border-radius:12px;
+font-weight:bold;
+font-size:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.35);
+}
+
+.backbtn:hover{
+background:#ffb700;
+}
+
+.hero{
+max-width:1200px;
+margin:0 auto 28px auto;
+text-align:center;
+background:rgba(0,0,0,0.35);
+border-radius:24px;
+padding:30px 20px;
+box-shadow:0 8px 24px rgba(0,0,0,0.35);
+}
+
+.hero h1{
+margin:0 0 10px 0;
+font-size:52px;
+line-height:1.05;
+color:#ffd000;
+}
+
+.hero p{
+margin:0 auto;
+font-size:20px;
+max-width:850px;
+line-height:1.5;
+}
+
+.live-shows{
+max-width:1200px;
+margin:0 auto 28px auto;
+background:rgba(0,0,0,0.35);
+border-radius:24px;
+padding:24px 18px;
+box-shadow:0 8px 24px rgba(0,0,0,0.35);
+}
+
+.live-shows h2{
+margin:0 0 18px 0;
+text-align:center;
+font-size:34px;
+color:#ffd000;
+}
+
+.live-grid{
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:18px;
+}
+
+.live-card{
+background:rgba(255,255,255,0.08);
+border-radius:20px;
+padding:18px;
+text-align:center;
+box-shadow:0 6px 16px rgba(0,0,0,0.3);
+}
+
+.live-badge{
+display:inline-block;
+padding:7px 14px;
+border-radius:999px;
+background:#d60000;
+color:white;
+font-size:13px;
+font-weight:bold;
+margin-bottom:12px;
+letter-spacing:1px;
+}
+
+.live-card h3{
+margin:0 0 8px 0;
+color:#ffd000;
+font-size:24px;
+}
+
+.live-time{
+font-size:18px;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+.live-host{
+font-size:16px;
+color:white;
+}
+
+.schedule-wrap{
+max-width:1200px;
+margin:0 auto;
+background:rgba(0,0,0,0.35);
+border-radius:24px;
+padding:24px 18px;
+box-shadow:0 8px 24px rgba(0,0,0,0.35);
+}
+
+.schedule-wrap h2{
+margin:0 0 18px 0;
+text-align:center;
+font-size:34px;
+color:#ffd000;
+}
+
+.schedule-grid{
+display:grid;
+grid-template-columns:repeat(7, 1fr);
+gap:14px;
+}
+
+.day-card{
+background:rgba(255,255,255,0.08);
+border-radius:20px;
+padding:14px 12px 16px 12px;
+box-shadow:0 6px 16px rgba(0,0,0,0.3);
+display:flex;
+flex-direction:column;
+}
+
+.day-title{
+font-size:22px;
+font-weight:bold;
+color:#ffd000;
+text-align:center;
+margin-bottom:14px;
+}
+
+.slot{
+background:rgba(0,0,0,0.25);
+border-radius:14px;
+padding:10px;
+margin-bottom:10px;
+text-align:center;
+}
+
+.slot:last-child{
+margin-bottom:0;
+}
+
+.slot-time{
+font-size:14px;
+font-weight:bold;
+margin-bottom:5px;
+color:#ffffff;
+}
+
+.slot-show{
+font-size:15px;
+line-height:1.4;
+}
+
+.slot.live{
+background:rgba(214,0,0,0.18);
+border:1px solid rgba(255,90,90,0.55);
+}
+
+.slot.live .slot-show{
+color:#ffd000;
+font-weight:bold;
+}
+
+.footer-note{
+max-width:1200px;
+margin:28px auto 0 auto;
+text-align:center;
+background:rgba(0,0,0,0.35);
+border-radius:24px;
+padding:18px;
+box-shadow:0 8px 24px rgba(0,0,0,0.35);
+font-size:16px;
+line-height:1.6;
+}
+
+.footer-note strong{
+color:#ffd000;
+}
+
+@media (max-width: 1100px){
+.schedule-grid{
+grid-template-columns:repeat(2, 1fr);
+}
+
+.live-grid{
+grid-template-columns:1fr;
+}
+}
+
+@media (max-width: 700px){
+.hero h1{
+font-size:36px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.live-shows h2,
+.schedule-wrap h2{
+font-size:28px;
+}
+
+.schedule-grid{
+grid-template-columns:1fr;
+}
+
+.day-title{
+font-size:24px;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="page-overlay">
+
+  <div class="topbar">
+    <a href="index.html" class="backbtn">⬅ Back to Radio</a>
+  </div>
+
+  <div class="hero">
+    <h1>Duck Duck Radio Program</h1>
+    <p>
+      Welcome to Duck Duck Radio, your 24/7 music station packed with the best songs, feel-good energy,
+      and special live shows with Wilmer Gerber. Great music all day, every day, with a few standout moments
+      during the week when we go properly live.
+    </p>
+  </div>
+
+  <div class="live-shows">
+    <h2>Live Broadcast Highlights</h2>
+
+    <div class="live-grid">
+      <div class="live-card">
+        <div class="live-badge">LIVE</div>
+        <h3>Country Music</h3>
+        <div class="live-time">Thursday, 19h00 to 20h00</div>
+        <div class="live-host">With Wilmer Gerber</div>
+      </div>
+
+      <div class="live-card">
+        <div class="live-badge">LIVE</div>
+        <h3>Breakfast Radio</h3>
+        <div class="live-time">Saturday, 09h00 to 10h00</div>
+        <div class="live-host">With Wilmer Gerber</div>
+      </div>
+
+      <div class="live-card">
+        <div class="live-badge">LIVE</div>
+        <h3>Social</h3>
+        <div class="live-time">Saturday, 20h00 to 21h30</div>
+        <div class="live-host">With Wilmer Gerber</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="schedule-wrap">
+    <h2>Weekly Program Roster</h2>
+
+    <div class="schedule-grid">
+
+      <div class="day-card">
+        <div class="day-title">Monday</div>
+        <div class="slot">
+          <div class="slot-time">00h00 to 06h00</div>
+          <div class="slot-show">Midnight Mix</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">06h00 to 12h00</div>
+          <div class="slot-show">Wake Up with the Bay Hits</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">12h00 to 18h00</div>
+          <div class="slot-show">Afternoon Music Drive</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">18h00 to 00h00</div>
+          <div class="slot-show">Feel Good Evenings</div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-title">Tuesday</div>
+        <div class="slot">
+          <div class="slot-time">00h00 to 06h00</div>
+          <div class="slot-show">Moonlight Melodies</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">06h00 to 12h00</div>
+          <div class="slot-show">Sunrise Soundtrack</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">12h00 to 18h00</div>
+          <div class="slot-show">Noon to Night Favourites</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">18h00 to 00h00</div>
+          <div class="slot-show">Golden Hits and Good Vibes</div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-title">Wednesday</div>
+        <div class="slot">
+          <div class="slot-time">00h00 to 06h00</div>
+          <div class="slot-show">Night Owl Playlist</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">06h00 to 12h00</div>
+          <div class="slot-show">Duck Duck Morning Energy</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">12h00 to 18h00</div>
+          <div class="slot-show">Midweek Music Flow</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">18h00 to 00h00</div>
+          <div class="slot-show">Smooth Sailing Sessions</div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-title">Thursday</div>
+        <div class="slot">
+          <div class="slot-time">00h00 to 06h00</div>
+          <div class="slot-show">After Dark Audio</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">06h00 to 12h00</div>
+          <div class="slot-show">Rise and Ride Playlist</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">12h00 to 19h00</div>
+          <div class="slot-show">Best Music All Day</div>
+        </div>
+        <div class="slot live">
+          <div class="slot-time">19h00 to 20h00</div>
+          <div class="slot-show">LIVE, Country Music with Wilmer Gerber</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">20h00 to 00h00</div>
+          <div class="slot-show">Country Afterglow and Easy Listening</div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-title">Friday</div>
+        <div class="slot">
+          <div class="slot-time">00h00 to 06h00</div>
+          <div class="slot-show">Late Night Legends</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">06h00 to 12h00</div>
+          <div class="slot-show">Friday Fresh Start</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">12h00 to 18h00</div>
+          <div class="slot-show">Weekend Warm-Up</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">18h00 to 00h00</div>
+          <div class="slot-show">Friday Night Party Mix</div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-title">Saturday</div>
+        <div class="slot">
+          <div class="slot-time">00h00 to 09h00</div>
+          <div class="slot-show">Weekend Wake-Up Music</div>
+        </div>
+        <div class="slot live">
+          <div class="slot-time">09h00 to 10h00</div>
+          <div class="slot-show">LIVE, Breakfast Radio with Wilmer Gerber</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">10h00 to 20h00</div>
+          <div class="slot-show">Saturday Hit Parade</div>
+        </div>
+        <div class="slot live">
+          <div class="slot-time">20h00 to 21h30</div>
+          <div class="slot-show">LIVE, Social with Wilmer Gerber</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">21h30 to 00h00</div>
+          <div class="slot-show">Saturday Night Wind Down</div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-title">Sunday</div>
+        <div class="slot">
+          <div class="slot-time">00h00 to 06h00</div>
+          <div class="slot-show">Quiet Coast Sounds</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">06h00 to 12h00</div>
+          <div class="slot-show">Sunday Sunshine Playlist</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">12h00 to 18h00</div>
+          <div class="slot-show">Lazy Day Legends</div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">18h00 to 00h00</div>
+          <div class="slot-show">Sunday Slow Jam Closeout</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <strong>Duck Duck Radio is live 24/7.</strong> When no live show is on air, we keep the music rolling with a powerful mix of favourites, feel-good hits, and proper station energy day and night.
+  </div>
+
+</div>
+
+</body>
+</html>
