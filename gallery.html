@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Duck Duck Radio Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" href="duck_radio_icon_180.png">
+<link rel="icon" href="duck_radio_icon_192.png">
+<meta name="theme-color" content="#ffd000">
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background-image:
+linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+url("duck-duck.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+background-repeat:no-repeat;
+color:white;
+}
+
+.page-overlay{
+min-height:100vh;
+background:rgba(0,0,0,0.35);
+padding:20px 12px 40px 12px;
+}
+
+.topbar{
+max-width:1200px;
+margin:0 auto 20px auto;
+display:flex;
+justify-content:center;
+}
+
+.backbtn{
+display:inline-block;
+padding:12px 24px;
+background:#ffd000;
+color:black;
+text-decoration:none;
+border-radius:12px;
+font-weight:bold;
+font-size:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.35);
+}
+
+.backbtn:hover{
+background:#ffb700;
+}
+
+.hero{
+max-width:1200px;
+margin:0 auto 28px auto;
+text-align:center;
+background:rgba(0,0,0,0.35);
+border-radius:24px;
+padding:30px 20px;
+box-shadow:0 8px 24px rgba(0,0,0,0.35);
+}
+
+.hero h1{
+margin:0 0 10px 0;
+font-size:52px;
+line-height:1.05;
+color:#ffd000;
+}
+
+.hero p{
+margin:0 auto;
+font-size:20px;
+max-width:850px;
+line-height:1.5;
+}
+
+.gallery-section{
+max-width:1200px;
+margin:0 auto 28px auto;
+background:rgba(0,0,0,0.35);
+border-radius:24px;
+padding:24px 18px;
+box-shadow:0 8px 24px rgba(0,0,0,0.35);
+}
+
+.gallery-section h2{
+margin:0 0 8px 0;
+text-align:center;
+font-size:34px;
+color:#ffd000;
+}
+
+.gallery-section p{
+margin:0 0 22px 0;
+text-align:center;
+font-size:16px;
+line-height:1.5;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:18px;
+}
+
+.gallery-item{
+background:rgba(255,255,255,0.08);
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 6px 16px rgba(0,0,0,0.3);
+}
+
+.gallery-photo{
+height:250px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(255,208,0,0.15), rgba(255,208,0,0.15)),
+rgba(255,255,255,0.08);
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.gallery-photo span{
+display:inline-block;
+font-size:22px;
+font-weight:bold;
+color:#ffd000;
+line-height:1.4;
+}
+
+.gallery-caption{
+padding:16px;
+text-align:center;
+}
+
+.gallery-caption h3{
+margin:0 0 8px 0;
+font-size:22px;
+color:#ffd000;
+}
+
+.gallery-caption p{
+margin:0;
+font-size:15px;
+line-height:1.5;
+color:white;
+}
+
+.memory-strip{
+max-width:1200px;
+margin:0 auto 28px auto;
+background:rgba(0,0,0,0.35);
+border-radius:24px;
+padding:24px 18px;
+box-shadow:0 8px 24px rgba(0,0,0,0.35);
+text-align:center;
+}
+
+.memory-strip h2{
+margin:0 0 12px 0;
+font-size:34px;
+color:#ffd000;
+}
+
+.memory-strip p{
+margin:0 auto;
+max-width:850px;
+font-size:16px;
+line-height:1.6;
+}
+
+.footer-note{
+max-width:1200px;
+margin:0 auto;
+text-align:center;
+background:rgba(0,0,0,0.35);
+border-radius:24px;
+padding:18px;
+box-shadow:0 8px 24px rgba(0,0,0,0.35);
+font-size:16px;
+line-height:1.6;
+}
+
+.footer-note strong{
+color:#ffd000;
+}
+
+@media (max-width: 900px){
+.gallery-grid{
+grid-template-columns:1fr 1fr;
+}
+}
+
+@media (max-width: 700px){
+.hero h1{
+font-size:36px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.gallery-section h2,
+.memory-strip h2{
+font-size:28px;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+.gallery-photo{
+height:220px;
+}
+
+.gallery-photo span{
+font-size:20px;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="page-overlay">
+
+  <div class="topbar">
+    <a href="index.html" class="backbtn">⬅ Back to Radio</a>
+  </div>
+
+  <div class="hero">
+    <h1>Duck Duck Radio Gallery</h1>
+    <p>
+      A growing collection of Duck Duck Radio moments, station fun, community memories, behind the scenes energy,
+      and all the good vibes that make the brand come alive.
+    </p>
+  </div>
+
+  <div class="gallery-section">
+    <h2>Photo Gallery</h2>
+    <p>These are placeholder spaces for your future photos. Later you can replace each one with your real images.</p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <div class="gallery-photo">
+          <span>PHOTO<br>PLACEHOLDER 1</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Studio Moments</h3>
+          <p>Use this space for live studio photos, microphones, or on-air action.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-photo">
+          <span>PHOTO<br>PLACEHOLDER 2</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Wilmer on Air</h3>
+          <p>Perfect for presenter photos, live sessions, and memorable radio highlights.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-photo">
+          <span>PHOTO<br>PLACEHOLDER 3</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Duck Duck Events</h3>
+          <p>Add event pictures here, promotions, community gatherings, or station visits.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-photo">
+          <span>PHOTO<br>PLACEHOLDER 4</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Behind the Scenes</h3>
+          <p>Show the setup, the team, the fun, and the real personality behind the station.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-photo">
+          <span>PHOTO<br>PLACEHOLDER 5</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Community Vibes</h3>
+          <p>Use this for listener photos, local supporters, and memorable Stilbaai moments.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-photo">
+          <span>PHOTO<br>PLACEHOLDER 6</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Brand Highlights</h3>
+          <p>Great for merchandise, posters, logos, vehicle branding, or station promo shots.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-photo">
+          <span>PHOTO<br>PLACEHOLDER 7</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Beach and Bay Life</h3>
+          <p>Show off the Stilbaai setting and the local flavor behind Duck Duck Radio.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-photo">
+          <span>PHOTO<br>PLACEHOLDER 8</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Special Guests</h3>
+          <p>Save this spot for interviews, visitors, artists, or anyone featured on the station.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-photo">
+          <span>PHOTO<br>PLACEHOLDER 9</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Listener Memories</h3>
+          <p>A nice place for fan photos, shoutout moments, and community submissions.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="memory-strip">
+    <h2>More Than a Radio Station</h2>
+    <p>
+      Duck Duck Radio is not just about music. It is about personality, fun, local pride, and the moments people remember.
+      This gallery will grow into the visual story of the station.
+    </p>
+  </div>
+
+  <div class="footer-note">
+    <strong>Tip:</strong> Later, each placeholder block can be replaced with a real image by inserting an
+    <strong>&lt;img&gt;</strong> tag inside the photo area.
+  </div>
+
+</div>
+
+</body>
+</html>
