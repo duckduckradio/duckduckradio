@@ -1,1 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Duck Duck Radio Merchandise</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" href="duck_radio_icon_180.png">
+<link rel="icon" href="duck_radio_icon_192.png">
+<meta name="theme-color" content="#ffd000">
 
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background-image:
+linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+url("duck-duck.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+background-repeat:no-repeat;
+color:white;
+}
+
+.page-overlay{
+min-height:100vh;
+background:rgba(0,0,0,0.35);
+padding:20px 12px 40px 12px;
+}
+
+.topbar{
+max-width:1200px;
+margin:0 auto 20px auto;
+display:flex;
+justify-content:center;
+}
+
+.backbtn{
+display:inline-block;
+padding:12px 24px;
+background:#ffd000;
+color:black;
+text-decoration:none;
+border-radius:12px;
+font-weight:bold;
+font-size:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.35);
+}
+
+.backbtn:hover{
+background:#ffb700;
+}
+
+.hero{
+max-width:1200px;
+margin:0 auto 30px auto;
+text-align:center;
+background:rgba(0,0,0,0.35);
+border-radius:24px;
+padding:30px 20px;
+box-shadow:0 8px 24px rgba(0,0,0,0.35);
+}
+
+.hero h1{
+margin:0 0 10px 0;
+font-size:52px;
+line-height:1.05;
+color:#ffd000;
+}
+
+.hero p{
+margin:0;
+font-size:20px;
+color:white;
+}
+
+.section{
+max-width:1200px;
+margin:0 auto 28px auto;
+background:rgba(0,0,0,0.35);
+border-radius:24px;
+padding:26px 18px 24px 18px;
+box-shadow:0 8px 24px rgba(0,0,0,0.35);
+}
+
+.section-title{
+text-align:center;
+font-size:34px;
+color:#ffd000;
+margin:0 0 8px 0;
+}
+
+.section-subtitle{
+text-align:center;
+font-size:16px;
+color:white;
+margin:0 0 24px 0;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:20px;
+}
+
+.products.two{
+grid-template-columns:repeat(2, 1fr);
+max-width:820px;
+margin:0 auto;
+}
+
+.product-card{
+background:rgba(255,255,255,0.08);
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 6px 16px rgba(0,0,0,0.3);
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.product-image{
+background:rgba(255,255,255,0.92);
+padding:16px;
+min-height:320px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.product-image img{
+max-width:100%;
+max-height:290px;
+object-fit:contain;
+display:block;
+border-radius:12px;
+}
+
+.product-info{
+padding:18px 16px 20px 16px;
+text-align:center;
+}
+
+.product-info h3{
+margin:0 0 8px 0;
+font-size:24px;
+color:#ffd000;
+}
+
+.product-info p{
+margin:0 0 14px 0;
+font-size:15px;
+line-height:1.5;
+color:white;
+min-height:44px;
+}
+
+.price{
+display:block;
+font-size:22px;
+font-weight:bold;
+color:#ffffff;
+margin-bottom:14px;
+}
+
+.buybtn{
+display:inline-block;
+padding:12px 20px;
+background:#ffd000;
+color:black;
+text-decoration:none;
+border-radius:12px;
+font-weight:bold;
+font-size:15px;
+min-width:180px;
+}
+
+.buybtn:hover{
+background:#ffb700;
+}
+
+.note-box{
+max-width:1200px;
+margin:0 auto;
+background:rgba(0,0,0,0.35);
+border-radius:24px;
+padding:20px;
+text-align:center;
+box-shadow:0 8px 24px rgba(0,0,0,0.35);
+}
+
+.note-box h3{
+margin:0 0 10px 0;
+color:#ffd000;
+font-size:24px;
+}
+
+.note-box p{
+margin:0;
+font-size:15px;
+line-height:1.6;
+}
+
+@media (max-width: 900px){
+.hero h1{
+font-size:42px;
+}
+
+.products{
+grid-template-columns:1fr;
+}
+
+.products.two{
+grid-template-columns:1fr;
+max-width:100%;
+}
+
+.product-image{
+min-height:280px;
+}
+
+.product-image img{
+max-height:250px;
+}
+}
+
+@media (max-width: 600px){
+.hero{
+padding:24px 16px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.section{
+padding:22px 14px 20px 14px;
+}
+
+.section-title{
+font-size:28px;
+}
+
+.product-info h3{
+font-size:22px;
+}
+
+.buybtn{
+min-width:160px;
+font-size:14px;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="page-overlay">
+
+  <div class="topbar">
+    <a href="index.html" class="backbtn">⬅ Back to Radio</a>
+  </div>
+
+  <div class="hero">
+    <h1>Duck Duck Radio Merchandise</h1>
+    <p>Fun gear for loyal listeners, local legends, and everyone who loves the sound of Stilbaai.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Hoodies</h2>
+    <p class="section-subtitle">Warm, bold, and full of Duck Duck attitude.</p>
+
+    <div class="products">
+      <div class="product-card">
+        <div class="product-image">
+          <img src="hoodie1.png" alt="Duck Duck Radio Hoodie 1">
+        </div>
+        <div class="product-info">
+          <h3>Classic Navy Hoodie</h3>
+          <p>The signature Duck Duck Radio hoodie, clean, bold, and made to stand out.</p>
+          <span class="price">R499</span>
+          <a href="#" class="buybtn">Order This Hoodie</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="hoodie2.png" alt="Duck Duck Radio Hoodie 2">
+        </div>
+        <div class="product-info">
+          <h3>Sunset Vibes Hoodie</h3>
+          <p>A fun, energetic hoodie design that fits the station’s playful coastal brand.</p>
+          <span class="price">R499</span>
+          <a href="#" class="buybtn">Order This Hoodie</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="hoodie3.png" alt="Duck Duck Radio Hoodie 3">
+        </div>
+        <div class="product-info">
+          <h3>Limited Edition Hoodie</h3>
+          <p>For the real fans who want something a little more exclusive and eye-catching.</p>
+          <span class="price">R549</span>
+          <a href="#" class="buybtn">Order This Hoodie</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Caps</h2>
+    <p class="section-subtitle">Cool caps for sunny days, beach drives, and everyday style.</p>
+
+    <div class="products">
+      <div class="product-card">
+        <div class="product-image">
+          <img src="cap1.png" alt="Duck Duck Radio Cap 1">
+        </div>
+        <div class="product-info">
+          <h3>Brown Duck Cap</h3>
+          <p>A warm earthy look with the bold Duck Duck Radio logo front and center.</p>
+          <span class="price">R249</span>
+          <a href="#" class="buybtn">Order This Cap</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="cap2.png" alt="Duck Duck Radio Cap 2">
+        </div>
+        <div class="product-info">
+          <h3>Navy Duck Cap</h3>
+          <p>A clean and stylish navy cap that works with almost anything.</p>
+          <span class="price">R249</span>
+          <a href="#" class="buybtn">Order This Cap</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="cap3.png" alt="Duck Duck Radio Cap 3">
+        </div>
+        <div class="product-info">
+          <h3>Premium Radio Cap</h3>
+          <p>A premium version for those who want a sporty, standout Duck Duck look.</p>
+          <span class="price">R279</span>
+          <a href="#" class="buybtn">Order This Cap</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Coffee Mugs</h2>
+    <p class="section-subtitle">Start the morning with coffee and Duck Duck Radio.</p>
+
+    <div class="products two">
+      <div class="product-card">
+        <div class="product-image">
+          <img src="mug1.png" alt="Duck Duck Radio Mug 1">
+        </div>
+        <div class="product-info">
+          <h3>Classic Duck Mug</h3>
+          <p>A cheerful mug design for home, studio, office, or gift giving.</p>
+          <span class="price">R149</span>
+          <a href="#" class="buybtn">Order This Mug</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="mug2.png" alt="Duck Duck Radio Mug 2">
+        </div>
+        <div class="product-info">
+          <h3>Morning Show Mug</h3>
+          <p>A fun mug for listeners who like their coffee hot and their radio loud.</p>
+          <span class="price">R149</span>
+          <a href="#" class="buybtn">Order This Mug</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <h3>How to use your own images</h3>
+    <p>
+      Upload your product images into the same folder as this page and name them:
+      <strong>hoodie1.png</strong>, <strong>hoodie2.png</strong>, <strong>hoodie3.png</strong>,
+      <strong>cap1.png</strong>, <strong>cap2.png</strong>, <strong>cap3.png</strong>,
+      <strong>mug1.png</strong>, <strong>mug2.png</strong>.
+      Then this page will show them automatically.
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
