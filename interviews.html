@@ -1,1 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Duck Duck Radio, Interviews</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" href="duck_radio_icon_180.png">
+<link rel="icon" href="duck_radio_icon_192.png">
+<meta name="theme-color" content="#ffd000">
 
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+min-height:100vh;
+background-image:
+linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+url("duck-duck.jpg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+font-family:Arial, sans-serif;
+text-align:center;
+padding:10px;
+}
+
+.page-wrap{
+width:100%;
+max-width:1100px;
+margin:0 auto;
+display:flex;
+justify-content:center;
+align-items:flex-start;
+gap:10px;
+}
+
+.ads-column{
+width:90px;
+display:flex;
+flex-direction:column;
+gap:10px;
+flex-shrink:0;
+}
+
+.ad-box{
+width:90px;
+height:90px;
+background:rgba(255,255,255,0.92);
+border-radius:6px;
+overflow:hidden;
+display:block;
+box-shadow:0 4px 10px rgba(0,0,0,0.35);
+}
+
+.ad-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+.center-wrap{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.center-column{
+width:100%;
+max-width:650px;
+min-height:890px;
+display:flex;
+flex-direction:column;
+align-items:center;
+background:rgba(0,0,0,0.35);
+border-radius:20px;
+padding:14px 0 20px 0;
+}
+
+.top-menu{
+width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:10px;
+padding:0 18px;
+margin-bottom:20px;
+}
+
+.linkbtn{
+display:inline-block;
+padding:12px 18px;
+background:#ffd000;
+color:black;
+text-decoration:none;
+border-radius:12px;
+font-weight:bold;
+border:none;
+cursor:pointer;
+font-size:15px;
+min-width:230px;
+}
+
+.linkbtn:hover{
+background:#ffb700;
+}
+
+.content-box{
+width:100%;
+max-width:620px;
+padding:10px 22px 25px 22px;
+}
+
+.page-title{
+font-size:44px;
+font-weight:bold;
+color:#ffd000;
+margin-bottom:10px;
+line-height:1.1;
+}
+
+.page-subtitle{
+color:white;
+font-size:18px;
+margin-bottom:24px;
+}
+
+.intro-text{
+color:white;
+font-size:16px;
+line-height:1.6;
+margin-bottom:24px;
+background:rgba(0,0,0,0.28);
+padding:14px;
+border-radius:12px;
+}
+
+.interview-list{
+width:100%;
+text-align:left;
+background:rgba(0,0,0,0.30);
+border-radius:16px;
+padding:20px;
+}
+
+.interview-list a{
+display:block;
+color:#ffd000;
+text-decoration:none;
+font-size:18px;
+font-weight:bold;
+padding:12px 0;
+border-bottom:1px solid rgba(255,255,255,0.15);
+word-wrap:break-word;
+}
+
+.interview-list a:last-child{
+border-bottom:none;
+}
+
+.interview-list a:hover{
+color:white;
+}
+
+.player-box{
+margin-top:24px;
+background:rgba(0,0,0,0.30);
+padding:16px;
+border-radius:16px;
+}
+
+.player-title{
+color:#ffd000;
+font-size:20px;
+font-weight:bold;
+margin-bottom:14px;
+}
+
+audio{
+width:100%;
+max-width:560px;
+}
+
+.note{
+margin-top:14px;
+color:white;
+font-size:14px;
+line-height:1.5;
+opacity:0.95;
+}
+
+@media (max-width: 700px){
+.page-wrap{
+gap:6px;
+}
+
+.ads-column{
+width:72px;
+gap:8px;
+}
+
+.ad-box{
+width:72px;
+height:72px;
+}
+
+.center-column{
+max-width:100%;
+min-height:auto;
+padding:12px 0 18px 0;
+}
+
+.top-menu{
+padding:0 14px;
+}
+
+.linkbtn{
+min-width:200px;
+font-size:14px;
+padding:11px 16px;
+}
+
+.content-box{
+padding:8px 14px 20px 14px;
+}
+
+.page-title{
+font-size:34px;
+}
+
+.page-subtitle{
+font-size:16px;
+}
+
+.interview-list a{
+font-size:16px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="page-wrap">
+
+  <div class="ads-column">
+    <a href="#" class="ad-box"><img src="Privelistea.jpg" alt="Advert 1"></a>
+    <a href="#" class="ad-box"><img src="CarCareClinic.jpg" alt="Advert 2"></a>
+    <a href="#" class="ad-box"><img src="simply.jpg" alt="Advert 3"></a>
+    <a href="#" class="ad-box"><img src="steyns.jpg" alt="Advert 4"></a>
+    <a href="#" class="ad-box"><img src="namo.jpeg" alt="Advert 5"></a>
+    <a href="#" class="ad-box"><img src="Spar.jpeg" alt="Advert 6"></a>
+    <a href="#" class="ad-box"><img src="Realty.jpg" alt="Advert 7"></a>
+    <a href="#" class="ad-box"><img src="plumb.jpg" alt="Advert 8"></a>
+    <a href="#" class="ad-box"><img src="movin.jpg" alt="Advert 9"></a>
+  </div>
+
+  <div class="center-wrap">
+    <div class="center-column">
+
+      <div class="top-menu">
+        <a href="index.html" class="linkbtn">Home</a>
+        <a href="program.html" class="linkbtn">Program</a>
+        <a href="gallery.html" class="linkbtn">Gallery</a>
+        <a href="merchandise.html" class="linkbtn">Merchandise</a>
+        <a href="interviews.html" class="linkbtn">Interviews</a>
+      </div>
+
+      <div class="content-box">
+        <div class="page-title">Duck Duck Radio Interviews</div>
+        <div class="page-subtitle">Listen again to our recorded interviews</div>
+
+        <div class="intro-text">
+          Click on any interview below and it will play in the audio player.
+        </div>
+
+        <div class="interview-list">
+          <a href="#" onclick="playInterview('interview1.mpeg','18 April 2026, Wilmer Gerber with adv. Hendrik van Staden'); return false;">
+            18 April 2026, Wilmer Gerber with adv. Hendrik van Staden
+          </a>
+
+          <a href="#" onclick="playInterview('interview2.mpeg','25 April 2026, Wilmer Gerber with Guest Name'); return false;">
+            25 April 2026, Wilmer Gerber with Guest Name
+          </a>
+
+          <a href="#" onclick="playInterview('interview3.mpeg','02 May 2026, Wilmer Gerber with Guest Name'); return false;">
+            02 May 2026, Wilmer Gerber with Guest Name
+          </a>
+
+          <a href="#" onclick="playInterview('interview4.mpeg','09 May 2026, Wilmer Gerber with Guest Name'); return false;">
+            09 May 2026, Wilmer Gerber with Guest Name
+          </a>
+        </div>
+
+        <div class="player-box">
+          <div id="playerTitle" class="player-title">Select an interview to play</div>
+          <audio id="interviewPlayer" controls>
+            <source id="audioSource" src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <div class="note">
+            Put your .mpeg interview files in the same folder as this page, or change the file paths to match where you saved them.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ads-column">
+    <a href="#" class="ad-box"><img src="Kelders.jpg" alt="Advert 10"></a>
+    <a href="#" class="ad-box"><img src="peace.jpg" alt="Advert 11"></a>
+    <a href="#" class="ad-box"><img src="Add.jpg" alt="Advert 12"></a>
+    <a href="#" class="ad-box"><img src="Add.jpg" alt="Advert 13"></a>
+    <a href="#" class="ad-box"><img src="Add.jpg" alt="Advert 14"></a>
+    <a href="#" class="ad-box"><img src="Add.jpg" alt="Advert 15"></a>
+    <a href="#" class="ad-box"><img src="Add.jpg" alt="Advert 16"></a>
+    <a href="#" class="ad-box"><img src="Add.jpg" alt="Advert 17"></a>
+    <a href="#" class="ad-box"><img src="Add.jpg" alt="Advert 18"></a>
+  </div>
+
+</div>
+
+<script>
+function playInterview(fileName, titleText){
+  var player = document.getElementById("interviewPlayer");
+  var source = document.getElementById("audioSource");
+  var playerTitle = document.getElementById("playerTitle");
+
+  source.src = fileName;
+  player.load();
+  player.play();
+  playerTitle.innerHTML = titleText;
+}
+</script>
+
+</body>
+</html>
