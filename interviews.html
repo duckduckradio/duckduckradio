@@ -95,31 +95,6 @@ border-bottom:none;
 .interview-list a:hover{
 color:white;
 }
-
-.player-box{
-margin-top:20px;
-background:rgba(0,0,0,0.30);
-padding:16px;
-border-radius:16px;
-width:100%;
-}
-
-.player-title{
-color:#ffd000;
-font-size:18px;
-font-weight:bold;
-margin-bottom:12px;
-}
-
-audio{
-width:100%;
-}
-
-.note{
-margin-top:12px;
-color:white;
-font-size:14px;
-}
 </style>
 </head>
 
@@ -135,42 +110,21 @@ font-size:14px;
 
   <div class="interview-list">
 
-    <a href="#" onclick="playInterview('advhendrik1.mpeg','18 April 2026, Wilmer Gerber with adv. Hendrik van Staden prt1'); return false;">
+    <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_LINK_1" target="_blank">
       18 April 2026, Wilmer Gerber with adv. Hendrik van Staden prt1
     </a>
 
-    <a href="#" onclick="playInterview('advhendrik2.mpeg','18 April 2026, Wilmer Gerber with adv. Hendrik van Staden prt2'); return false;">
+    <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_LINK_2" target="_blank">
       18 April 2026, Wilmer Gerber with adv. Hendrik van Staden prt2
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_LINK_3" target="_blank">
+      2 May 2026, Marina Odendaal – Georgia, Romania & Bulgaria
     </a>
 
   </div>
 
-  <div class="player-box">
-    <div id="playerTitle" class="player-title">Select an interview to play</div>
-
-    <audio id="interviewPlayer" controls>
-      <source id="audioSource" src="" type="audio/mpeg">
-    </audio>
-
-    <div class="note">
-       
-    </div>
-  </div>
-
 </div>
-
-<script>
-function playInterview(fileName, titleText){
-  var player = document.getElementById("interviewPlayer");
-  var source = document.getElementById("audioSource");
-  var title = document.getElementById("playerTitle");
-
-  source.src = fileName;
-  player.load();
-  player.play();
-  title.innerHTML = titleText;
-}
-</script>
 
 </body>
 </html>
