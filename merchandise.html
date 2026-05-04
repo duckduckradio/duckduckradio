@@ -13,7 +13,7 @@
 body{
 margin:0;
 font-family:Arial,sans-serif;
-background-image:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("duck-duck.jpg");
+background-image:linear-gradient(rgba(0,0,0,0.58),rgba(0,0,0,0.58)),url("duck-duck.jpg");
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
@@ -24,7 +24,7 @@ color:white;
 .page-overlay{
 min-height:100vh;
 background:rgba(0,0,0,0.35);
-padding:20px 12px 40px 12px;
+padding:20px 12px 40px;
 }
 
 .topbar{text-align:center;margin-bottom:20px;}
@@ -46,8 +46,8 @@ cursor:pointer;
 
 .hero,.section,.cart-box{
 max-width:1200px;
-margin:0 auto 28px auto;
-background:rgba(0,0,0,0.35);
+margin:0 auto 28px;
+background:rgba(0,0,0,0.42);
 border-radius:24px;
 padding:26px 18px;
 box-shadow:0 8px 24px rgba(0,0,0,0.35);
@@ -56,7 +56,7 @@ box-shadow:0 8px 24px rgba(0,0,0,0.35);
 .hero{text-align:center;}
 
 .hero h1{
-margin:0 0 10px 0;
+margin:0 0 10px;
 font-size:52px;
 line-height:1.05;
 color:#ffd000;
@@ -68,13 +68,13 @@ color:#ffd000;
 text-align:center;
 font-size:34px;
 color:#ffd000;
-margin:0 0 8px 0;
+margin:0 0 8px;
 }
 
 .section-subtitle{
 text-align:center;
 font-size:16px;
-margin:0 0 24px 0;
+margin:0 0 24px;
 }
 
 .products{
@@ -94,42 +94,46 @@ background:rgba(255,255,255,0.08);
 border-radius:20px;
 overflow:hidden;
 box-shadow:0 6px 16px rgba(0,0,0,0.3);
+display:flex;
+flex-direction:column;
 }
 
 .product-image{
 background:rgba(255,255,255,0.92);
 padding:16px;
-min-height:320px;
+min-height:300px;
 display:flex;
 align-items:center;
 justify-content:center;
 }
 
-.product-image.no-white{
-background:transparent;
-}
+.product-image.no-white{background:transparent;}
 
 .product-image img{
 max-width:100%;
-max-height:290px;
+max-height:270px;
 object-fit:contain;
 display:block;
 border-radius:12px;
 }
 
 .product-info{
-padding:18px 16px 20px 16px;
+padding:18px 16px 20px;
 text-align:center;
+flex:1;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
 }
 
 .product-info h3{
-margin:0 0 8px 0;
+margin:0 0 8px;
 font-size:24px;
 color:#ffd000;
 }
 
 .product-info p{
-margin:0 0 14px 0;
+margin:0 0 14px;
 font-size:15px;
 line-height:1.5;
 min-height:44px;
@@ -142,47 +146,90 @@ font-weight:bold;
 margin-bottom:14px;
 }
 
-.product-controls{
-display:grid;
+.order-row{
+display:flex;
+align-items:center;
+justify-content:center;
 gap:10px;
 margin-bottom:14px;
+flex-wrap:wrap;
 }
 
-select,input,textarea{
-width:100%;
-padding:12px;
-border-radius:10px;
+.order-label{
+font-size:14px;
+font-weight:bold;
+}
+
+.qty-input{
+width:72px;
+padding:8px;
+border-radius:8px;
 border:none;
 font-size:15px;
+text-align:center;
 }
 
-.qty-input{text-align:center;}
+.size-select{
+width:95px;
+padding:8px;
+border-radius:8px;
+border:none;
+font-size:15px;
+text-align:center;
+}
 
 .cart-box h2{
 text-align:center;
 color:#ffd000;
 font-size:34px;
-margin:0 0 18px 0;
+margin:0 0 18px;
+}
+
+.cart-empty{
+text-align:center;
+opacity:0.9;
+padding:14px;
 }
 
 .cart-item{
 display:grid;
 grid-template-columns:1fr auto;
-gap:10px;
-background:rgba(255,255,255,0.08);
-padding:12px;
-border-radius:12px;
+gap:12px;
+background:rgba(255,255,255,0.09);
+padding:14px;
+border-radius:14px;
 margin-bottom:10px;
+align-items:center;
+}
+
+.cart-title{
+font-weight:bold;
+color:#ffd000;
+margin-bottom:4px;
+}
+
+.cart-details{
+font-size:14px;
+line-height:1.5;
 }
 
 .removebtn{
-background:#ff4444;
+background:#d93333;
 color:white;
 border:none;
 border-radius:10px;
 padding:8px 12px;
 cursor:pointer;
 font-weight:bold;
+}
+
+.removebtn:hover{background:#b92424;}
+
+.total-box{
+margin-top:16px;
+background:rgba(255,255,255,0.08);
+border-radius:14px;
+padding:14px;
 }
 
 .total-line{
@@ -210,6 +257,15 @@ margin-top:22px;
 
 .customer-form .full{grid-column:1 / -1;}
 
+input,textarea{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+font-size:15px;
+font-family:Arial,sans-serif;
+}
+
 .small-note{
 font-size:14px;
 line-height:1.5;
@@ -222,14 +278,17 @@ margin-top:14px;
 .hero h1{font-size:42px;}
 .products,.products.two{grid-template-columns:1fr;max-width:100%;}
 .customer-form{grid-template-columns:1fr;}
-.product-image{min-height:280px;}
-.product-image img{max-height:250px;}
+.product-image{min-height:260px;}
+.product-image img{max-height:240px;}
 }
 
 @media(max-width:600px){
+.hero{padding:24px 16px;}
 .hero h1{font-size:34px;}
 .hero p{font-size:17px;}
 .section-title,.cart-box h2{font-size:28px;}
+.cart-item{grid-template-columns:1fr;}
+.removebtn{width:100%;}
 }
 </style>
 </head>
@@ -255,63 +314,66 @@ margin-top:14px;
 <div class="product-card">
 <div class="product-image"><img src="hoodie1.png" alt="Classic Navy Hoodie"></div>
 <div class="product-info">
+<div>
 <h3>Classic Navy Hoodie</h3>
 <p>The signature Duck Duck Radio hoodie, clean, bold, and made to stand out.</p>
 <span class="price">R549</span>
-<div class="product-controls">
-<select id="size-hoodie1">
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-<option>2XL</option>
-<option>3XL</option>
+</div>
+<div>
+<div class="order-row">
+<span class="order-label">Size</span>
+<select id="size-hoodie1" class="size-select">
+<option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option>
 </select>
+<span class="order-label">Order Quantity</span>
 <input id="qty-hoodie1" class="qty-input" type="number" min="1" value="1">
 </div>
 <button class="buybtn" onclick="addToCart('Classic Navy Hoodie',549,'size-hoodie1','qty-hoodie1')">Add to Order</button>
+</div>
 </div>
 </div>
 
 <div class="product-card">
 <div class="product-image"><img src="hoodie2.png" alt="Sunset Vibes Hoodie"></div>
 <div class="product-info">
+<div>
 <h3>Sunset Vibes Hoodie</h3>
 <p>A fun, energetic hoodie design that fits the station’s playful coastal brand.</p>
 <span class="price">R549</span>
-<div class="product-controls">
-<select id="size-hoodie2">
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-<option>2XL</option>
-<option>3XL</option>
+</div>
+<div>
+<div class="order-row">
+<span class="order-label">Size</span>
+<select id="size-hoodie2" class="size-select">
+<option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option>
 </select>
+<span class="order-label">Order Quantity</span>
 <input id="qty-hoodie2" class="qty-input" type="number" min="1" value="1">
 </div>
 <button class="buybtn" onclick="addToCart('Sunset Vibes Hoodie',549,'size-hoodie2','qty-hoodie2')">Add to Order</button>
+</div>
 </div>
 </div>
 
 <div class="product-card">
 <div class="product-image"><img src="hoodie3.png" alt="Limited Edition Hoodie"></div>
 <div class="product-info">
+<div>
 <h3>Limited Edition Hoodie</h3>
 <p>For the real fans who want something more exclusive and eye-catching.</p>
 <span class="price">R549</span>
-<div class="product-controls">
-<select id="size-hoodie3">
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-<option>2XL</option>
-<option>3XL</option>
+</div>
+<div>
+<div class="order-row">
+<span class="order-label">Size</span>
+<select id="size-hoodie3" class="size-select">
+<option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option>
 </select>
+<span class="order-label">Order Quantity</span>
 <input id="qty-hoodie3" class="qty-input" type="number" min="1" value="1">
 </div>
 <button class="buybtn" onclick="addToCart('Limited Edition Hoodie',549,'size-hoodie3','qty-hoodie3')">Add to Order</button>
+</div>
 </div>
 </div>
 
@@ -327,39 +389,54 @@ margin-top:14px;
 <div class="product-card">
 <div class="product-image no-white"><img src="cap1.png" alt="Navy Duck Cap"></div>
 <div class="product-info">
+<div>
 <h3>Navy Duck Cap</h3>
 <p>A bold Duck Duck Radio cap for everyday wear.</p>
 <span class="price">R249</span>
-<div class="product-controls">
+</div>
+<div>
+<div class="order-row">
+<span class="order-label">Order Quantity</span>
 <input id="qty-cap1" class="qty-input" type="number" min="1" value="1">
 </div>
 <button class="buybtn" onclick="addToCartNoSize('Navy Duck Cap',249,'qty-cap1')">Add to Order</button>
+</div>
 </div>
 </div>
 
 <div class="product-card">
 <div class="product-image no-white"><img src="cap2.png" alt="Brown Duck Cap"></div>
 <div class="product-info">
+<div>
 <h3>Brown Duck Cap</h3>
 <p>A clean and stylish brown cap that works with almost anything.</p>
 <span class="price">R249</span>
-<div class="product-controls">
+</div>
+<div>
+<div class="order-row">
+<span class="order-label">Order Quantity</span>
 <input id="qty-cap2" class="qty-input" type="number" min="1" value="1">
 </div>
 <button class="buybtn" onclick="addToCartNoSize('Brown Duck Cap',249,'qty-cap2')">Add to Order</button>
+</div>
 </div>
 </div>
 
 <div class="product-card">
 <div class="product-image no-white"><img src="cap3.png" alt="Black Duck Cap"></div>
 <div class="product-info">
+<div>
 <h3>Black Duck Cap</h3>
 <p>A premium cap for a sporty Duck Duck look.</p>
 <span class="price">R249</span>
-<div class="product-controls">
+</div>
+<div>
+<div class="order-row">
+<span class="order-label">Order Quantity</span>
 <input id="qty-cap3" class="qty-input" type="number" min="1" value="1">
 </div>
 <button class="buybtn" onclick="addToCartNoSize('Black Duck Cap',249,'qty-cap3')">Add to Order</button>
+</div>
 </div>
 </div>
 
@@ -375,26 +452,36 @@ margin-top:14px;
 <div class="product-card">
 <div class="product-image no-white"><img src="mug1.png" alt="Classic Duck Mug"></div>
 <div class="product-info">
+<div>
 <h3>Classic Duck Mug</h3>
 <p>A cheerful mug design for home, studio, office, or gift giving.</p>
 <span class="price">R100</span>
-<div class="product-controls">
+</div>
+<div>
+<div class="order-row">
+<span class="order-label">Order Quantity</span>
 <input id="qty-mug1" class="qty-input" type="number" min="1" value="1">
 </div>
 <button class="buybtn" onclick="addToCartNoSize('Classic Duck Mug',100,'qty-mug1')">Add to Order</button>
+</div>
 </div>
 </div>
 
 <div class="product-card">
 <div class="product-image no-white"><img src="mug2.png" alt="Morning Show Mug"></div>
 <div class="product-info">
+<div>
 <h3>Morning Show Mug</h3>
 <p>A fun mug for listeners who like their coffee hot and their radio loud.</p>
 <span class="price">R100</span>
-<div class="product-controls">
+</div>
+<div>
+<div class="order-row">
+<span class="order-label">Order Quantity</span>
 <input id="qty-mug2" class="qty-input" type="number" min="1" value="1">
 </div>
 <button class="buybtn" onclick="addToCartNoSize('Morning Show Mug',100,'qty-mug2')">Add to Order</button>
+</div>
 </div>
 </div>
 
@@ -405,12 +492,14 @@ margin-top:14px;
 <h2>Your Order</h2>
 
 <div id="cartItems">
-<p style="text-align:center;">No items added yet.</p>
+<div class="cart-empty">No items added yet.</div>
 </div>
 
+<div class="total-box">
 <div class="total-line"><span>Products Total:</span><span id="subtotalDisplay">R0</span></div>
 <div class="total-line"><span>Shipping:</span><span id="shippingDisplay">R0</span></div>
 <div class="total-line grand-total"><span>Total:</span><span id="grandTotalDisplay">R0</span></div>
+</div>
 
 <input type="hidden" name="_subject" value="New Duck Duck Radio Merchandise Order">
 <input type="hidden" name="_template" value="table">
@@ -429,7 +518,7 @@ margin-top:14px;
 <textarea class="full" name="Special Notes" placeholder="Special notes, optional" rows="3"></textarea>
 </div>
 
-<p class="small-note">Shipping is currently set at R99.</p>
+<p class="small-note">Shipping is currently set at R99 per order.</p>
 
 <div style="text-align:center;margin-top:18px;">
 <button type="submit" class="submitbtn">Submit Order</button>
@@ -451,14 +540,7 @@ alert("Please enter a valid quantity.");
 return;
 }
 
-cart.push({
-product: product,
-price: price,
-size: size,
-qty: qty,
-total: price * qty
-});
-
+cart.push({product, price, size, qty, total: price * qty});
 renderCart();
 }
 
@@ -470,14 +552,7 @@ alert("Please enter a valid quantity.");
 return;
 }
 
-cart.push({
-product: product,
-price: price,
-size: "",
-qty: qty,
-total: price * qty
-});
-
+cart.push({product, price, size: "", qty, total: price * qty});
 renderCart();
 }
 
@@ -490,17 +565,19 @@ function renderCart(){
 const cartItems = document.getElementById("cartItems");
 
 if(cart.length === 0){
-cartItems.innerHTML = '<p style="text-align:center;">No items added yet.</p>';
+cartItems.innerHTML = '<div class="cart-empty">No items added yet.</div>';
 }
 else{
 cartItems.innerHTML = cart.map((item,index) => `
 <div class="cart-item">
 <div>
-<strong>${item.product}</strong><br>
+<div class="cart-title">${item.product}</div>
+<div class="cart-details">
 ${item.size ? "Size: " + item.size + "<br>" : ""}
 Qty: ${item.qty}<br>
 Price: R${item.price} each<br>
 Item Total: R${item.total}
+</div>
 </div>
 <button type="button" class="removebtn" onclick="removeItem(${index})">Remove</button>
 </div>
@@ -535,7 +612,7 @@ const shipping = SHIPPING_COST;
 const grandTotal = subtotal + shipping;
 
 let summary = cart.map((item,index) => {
-let sizeText = item.size ? `, Size: ${item.size}` : "";
+let sizeText = item.size ? ", Size: " + item.size : "";
 return `${index + 1}. ${item.product}${sizeText}, Qty: ${item.qty}, Price: R${item.price}, Item Total: R${item.total}`;
 }).join("\n");
 
