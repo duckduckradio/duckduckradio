@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Thank You - Duck Duck Radio</title>
+<title>Order Received - Duck Duck Radio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body{
 font-family:Arial,sans-serif;
@@ -21,8 +22,15 @@ margin-bottom:10px;
 p{
 font-size:18px;
 line-height:1.6;
-max-width:500px;
+max-width:560px;
 margin:0 auto 20px auto;
+}
+
+.order-number{
+color:#ffd000;
+font-size:22px;
+font-weight:bold;
+margin:20px 0;
 }
 
 a{
@@ -42,16 +50,32 @@ background:#ffb700;
 }
 </style>
 </head>
+
 <body>
 
-<h1>Thank You 🎧</h1>
+<h1>Order Received 🎧</h1>
+
+<p>Your order has been received.</p>
+
+<div class="order-number" id="orderNumberBox"></div>
 
 <p>
-Your order has been received.<br><br>
 We will confirm stock and send you an invoice with payment details to your email shortly.
 </p>
 
 <a href="https://duckduckradio.github.io/duckduckradio/">Return to Duck Duck Radio</a>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const order = params.get("order");
+
+if(order){
+document.getElementById("orderNumberBox").innerText = "Order Number: " + order;
+}
+else{
+document.getElementById("orderNumberBox").innerText = "Order Number: Not available";
+}
+</script>
 
 </body>
 </html>
