@@ -489,7 +489,8 @@ margin-top:14px;
 </div>
 
 <form class="cart-box" action="https://formsubmit.co/duckduckradio@gmail.com" method="POST" onsubmit="return prepareOrder()">
-<input type="hidden" name="_next" value="https://duckduckradio.github.io/duckduckradio/thankyou.html">
+<input type="hidden" name="_next" id="nextField">
+<input type="hidden" name="Order Number" id="orderNumberField">
 
 <h2>Your Order</h2>
 
@@ -607,11 +608,15 @@ alert("Please add at least one item to your order.");
 return false;
 }
 
+const orderNumber = "DDR-" + Date.now();
+
 const subtotal = cart.reduce((sum,item) => sum + item.total,0);
 const shipping = SHIPPING_COST;
 const grandTotal = subtotal + shipping;
 
-let summary = cart.map((item,index) => {
+let summary = "Order Number: " + orderNumber + "\n\n";
+
+summary += cart.map((item,index) => {
 let sizeText = item.size ? ", Size: " + item.size : "";
 return `${index + 1}. ${item.product}${sizeText}, Qty: ${item.qty}, Price: R${item.price}, Item Total: R${item.total}`;
 }).join("\n");
@@ -621,6 +626,11 @@ summary += `\nShipping: R${shipping}`;
 summary += `\nGrand Total: R${grandTotal}`;
 
 document.getElementById("orderSummary").value = summary;
+document.getElementById("orderNumberField").value = orderNumber;
+
+document.getElementById("nextField").value =
+"https://duckduckradio.github.io/duckduckradio/thankyou.html?order=" + orderNumber;
+
 return true;
 }
 </script>
