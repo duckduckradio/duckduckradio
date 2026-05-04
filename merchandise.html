@@ -326,7 +326,7 @@ margin-top:14px;
 <option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option>
 </select>
 <span class="order-label">Order Quantity</span>
-<input id="qty-hoodie1" class="qty-input" type="number" min="1" value="1">
+<input id="qty-hoodie1" class="qty-input" type="number" min="0" value="0">
 </div>
 <button class="buybtn" onclick="addToCart('Classic Navy Hoodie',549,'size-hoodie1','qty-hoodie1')">Add to Order</button>
 </div>
@@ -348,7 +348,7 @@ margin-top:14px;
 <option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option>
 </select>
 <span class="order-label">Order Quantity</span>
-<input id="qty-hoodie2" class="qty-input" type="number" min="1" value="1">
+<input id="qty-hoodie2" class="qty-input" type="number" min="0" value="0">
 </div>
 <button class="buybtn" onclick="addToCart('Sunset Vibes Hoodie',549,'size-hoodie2','qty-hoodie2')">Add to Order</button>
 </div>
@@ -370,7 +370,7 @@ margin-top:14px;
 <option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option>
 </select>
 <span class="order-label">Order Quantity</span>
-<input id="qty-hoodie3" class="qty-input" type="number" min="1" value="1">
+<input id="qty-hoodie3" class="qty-input" type="number" min="0" value="0">
 </div>
 <button class="buybtn" onclick="addToCart('Limited Edition Hoodie',549,'size-hoodie3','qty-hoodie3')">Add to Order</button>
 </div>
@@ -397,7 +397,7 @@ margin-top:14px;
 <div>
 <div class="order-row">
 <span class="order-label">Order Quantity</span>
-<input id="qty-cap1" class="qty-input" type="number" min="1" value="1">
+<input id="qty-cap1" class="qty-input" type="number" min="0" value="0">
 </div>
 <button class="buybtn" onclick="addToCartNoSize('Navy Duck Cap',249,'qty-cap1')">Add to Order</button>
 </div>
@@ -415,7 +415,7 @@ margin-top:14px;
 <div>
 <div class="order-row">
 <span class="order-label">Order Quantity</span>
-<input id="qty-cap2" class="qty-input" type="number" min="1" value="1">
+<input id="qty-cap2" class="qty-input" type="number" min="0" value="0">
 </div>
 <button class="buybtn" onclick="addToCartNoSize('Brown Duck Cap',249,'qty-cap2')">Add to Order</button>
 </div>
@@ -433,7 +433,7 @@ margin-top:14px;
 <div>
 <div class="order-row">
 <span class="order-label">Order Quantity</span>
-<input id="qty-cap3" class="qty-input" type="number" min="1" value="1">
+<input id="qty-cap3" class="qty-input" type="number" min="0" value="0">
 </div>
 <button class="buybtn" onclick="addToCartNoSize('Black Duck Cap',249,'qty-cap3')">Add to Order</button>
 </div>
@@ -460,7 +460,7 @@ margin-top:14px;
 <div>
 <div class="order-row">
 <span class="order-label">Order Quantity</span>
-<input id="qty-mug1" class="qty-input" type="number" min="1" value="1">
+<input id="qty-mug1" class="qty-input" type="number" min="0" value="0">
 </div>
 <button class="buybtn" onclick="addToCartNoSize('Classic Duck Mug',100,'qty-mug1')">Add to Order</button>
 </div>
@@ -478,7 +478,7 @@ margin-top:14px;
 <div>
 <div class="order-row">
 <span class="order-label">Order Quantity</span>
-<input id="qty-mug2" class="qty-input" type="number" min="1" value="1">
+<input id="qty-mug2" class="qty-input" type="number" min="0" value="0">
 </div>
 <button class="buybtn" onclick="addToCartNoSize('Morning Show Mug',100,'qty-mug2')">Add to Order</button>
 </div>
@@ -537,8 +537,7 @@ function addToCart(product, price, sizeId, qtyId){
 const size = document.getElementById(sizeId).value;
 const qty = parseInt(document.getElementById(qtyId).value);
 
-if(!qty || qty < 1){
-alert("Please enter a valid quantity.");
+if(qty <= 0){
 return;
 }
 
@@ -549,8 +548,7 @@ renderCart();
 function addToCartNoSize(product, price, qtyId){
 const qty = parseInt(document.getElementById(qtyId).value);
 
-if(!qty || qty < 1){
-alert("Please enter a valid quantity.");
+if(qty <= 0){
 return;
 }
 
