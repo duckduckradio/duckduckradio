@@ -105,6 +105,10 @@ align-items:center;
 justify-content:center;
 }
 
+.product-image.no-white{
+background:transparent;
+}
+
 .product-image img{
 max-width:100%;
 max-height:290px;
@@ -152,9 +156,7 @@ border:none;
 font-size:15px;
 }
 
-.qty-input{
-text-align:center;
-}
+.qty-input{text-align:center;}
 
 .cart-box h2{
 text-align:center;
@@ -247,6 +249,7 @@ margin-top:14px;
 <div class="section">
 <h2 class="section-title">Hoodies</h2>
 <p class="section-subtitle">Warm, bold, and full of Duck Duck attitude.</p>
+
 <div class="products">
 
 <div class="product-card">
@@ -256,7 +259,14 @@ margin-top:14px;
 <p>The signature Duck Duck Radio hoodie, clean, bold, and made to stand out.</p>
 <span class="price">R549</span>
 <div class="product-controls">
-<select id="size-hoodie1"><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select>
+<select id="size-hoodie1">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>2XL</option>
+<option>3XL</option>
+</select>
 <input id="qty-hoodie1" class="qty-input" type="number" min="1" value="1">
 </div>
 <button class="buybtn" onclick="addToCart('Classic Navy Hoodie',549,'size-hoodie1','qty-hoodie1')">Add to Order</button>
@@ -270,7 +280,14 @@ margin-top:14px;
 <p>A fun, energetic hoodie design that fits the station’s playful coastal brand.</p>
 <span class="price">R549</span>
 <div class="product-controls">
-<select id="size-hoodie2"><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select>
+<select id="size-hoodie2">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>2XL</option>
+<option>3XL</option>
+</select>
 <input id="qty-hoodie2" class="qty-input" type="number" min="1" value="1">
 </div>
 <button class="buybtn" onclick="addToCart('Sunset Vibes Hoodie',549,'size-hoodie2','qty-hoodie2')">Add to Order</button>
@@ -284,7 +301,14 @@ margin-top:14px;
 <p>For the real fans who want something more exclusive and eye-catching.</p>
 <span class="price">R549</span>
 <div class="product-controls">
-<select id="size-hoodie3"><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select>
+<select id="size-hoodie3">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>2XL</option>
+<option>3XL</option>
+</select>
 <input id="qty-hoodie3" class="qty-input" type="number" min="1" value="1">
 </div>
 <button class="buybtn" onclick="addToCart('Limited Edition Hoodie',549,'size-hoodie3','qty-hoodie3')">Add to Order</button>
@@ -297,47 +321,45 @@ margin-top:14px;
 <div class="section">
 <h2 class="section-title">Caps</h2>
 <p class="section-subtitle">Cool caps for sunny days, beach drives, and everyday style.</p>
+
 <div class="products">
 
 <div class="product-card">
-<div class="product-image"><img src="cap1.png" alt="Navy Duck Cap"></div>
+<div class="product-image no-white"><img src="cap1.png" alt="Navy Duck Cap"></div>
 <div class="product-info">
 <h3>Navy Duck Cap</h3>
 <p>A bold Duck Duck Radio cap for everyday wear.</p>
 <span class="price">R249</span>
 <div class="product-controls">
-<select id="size-cap1"><option>One Size</option></select>
 <input id="qty-cap1" class="qty-input" type="number" min="1" value="1">
 </div>
-<button class="buybtn" onclick="addToCart('Navy Duck Cap',249,'size-cap1','qty-cap1')">Add to Order</button>
+<button class="buybtn" onclick="addToCartNoSize('Navy Duck Cap',249,'qty-cap1')">Add to Order</button>
 </div>
 </div>
 
 <div class="product-card">
-<div class="product-image"><img src="cap2.png" alt="Brown Duck Cap"></div>
+<div class="product-image no-white"><img src="cap2.png" alt="Brown Duck Cap"></div>
 <div class="product-info">
 <h3>Brown Duck Cap</h3>
 <p>A clean and stylish brown cap that works with almost anything.</p>
 <span class="price">R249</span>
 <div class="product-controls">
-<select id="size-cap2"><option>One Size</option></select>
 <input id="qty-cap2" class="qty-input" type="number" min="1" value="1">
 </div>
-<button class="buybtn" onclick="addToCart('Brown Duck Cap',249,'size-cap2','qty-cap2')">Add to Order</button>
+<button class="buybtn" onclick="addToCartNoSize('Brown Duck Cap',249,'qty-cap2')">Add to Order</button>
 </div>
 </div>
 
 <div class="product-card">
-<div class="product-image"><img src="cap3.png" alt="Black Duck Cap"></div>
+<div class="product-image no-white"><img src="cap3.png" alt="Black Duck Cap"></div>
 <div class="product-info">
 <h3>Black Duck Cap</h3>
 <p>A premium cap for a sporty Duck Duck look.</p>
 <span class="price">R249</span>
 <div class="product-controls">
-<select id="size-cap3"><option>One Size</option></select>
 <input id="qty-cap3" class="qty-input" type="number" min="1" value="1">
 </div>
-<button class="buybtn" onclick="addToCart('Black Duck Cap',249,'size-cap3','qty-cap3')">Add to Order</button>
+<button class="buybtn" onclick="addToCartNoSize('Black Duck Cap',249,'qty-cap3')">Add to Order</button>
 </div>
 </div>
 
@@ -347,33 +369,32 @@ margin-top:14px;
 <div class="section">
 <h2 class="section-title">Coffee Mugs</h2>
 <p class="section-subtitle">Start the morning with coffee and Duck Duck Radio.</p>
+
 <div class="products two">
 
 <div class="product-card">
-<div class="product-image"><img src="mug1.png" alt="Classic Duck Mug"></div>
+<div class="product-image no-white"><img src="mug1.png" alt="Classic Duck Mug"></div>
 <div class="product-info">
 <h3>Classic Duck Mug</h3>
 <p>A cheerful mug design for home, studio, office, or gift giving.</p>
 <span class="price">R100</span>
 <div class="product-controls">
-<select id="size-mug1"><option>Standard Mug</option></select>
 <input id="qty-mug1" class="qty-input" type="number" min="1" value="1">
 </div>
-<button class="buybtn" onclick="addToCart('Classic Duck Mug',100,'size-mug1','qty-mug1')">Add to Order</button>
+<button class="buybtn" onclick="addToCartNoSize('Classic Duck Mug',100,'qty-mug1')">Add to Order</button>
 </div>
 </div>
 
 <div class="product-card">
-<div class="product-image"><img src="mug2.png" alt="Morning Show Mug"></div>
+<div class="product-image no-white"><img src="mug2.png" alt="Morning Show Mug"></div>
 <div class="product-info">
 <h3>Morning Show Mug</h3>
 <p>A fun mug for listeners who like their coffee hot and their radio loud.</p>
 <span class="price">R100</span>
 <div class="product-controls">
-<select id="size-mug2"><option>Standard Mug</option></select>
 <input id="qty-mug2" class="qty-input" type="number" min="1" value="1">
 </div>
-<button class="buybtn" onclick="addToCart('Morning Show Mug',100,'size-mug2','qty-mug2')">Add to Order</button>
+<button class="buybtn" onclick="addToCartNoSize('Morning Show Mug',100,'qty-mug2')">Add to Order</button>
 </div>
 </div>
 
@@ -395,7 +416,7 @@ margin-top:14px;
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="false">
 
-<textarea name="Order Summary" id="orderSummary" class="full" style="display:none;"></textarea>
+<textarea name="Order Summary" id="orderSummary" style="display:none;"></textarea>
 <input type="hidden" name="Products Total" id="productsTotalField">
 <input type="hidden" name="Shipping" id="shippingField">
 <input type="hidden" name="Grand Total" id="grandTotalField">
@@ -408,7 +429,7 @@ margin-top:14px;
 <textarea class="full" name="Special Notes" placeholder="Special notes, optional" rows="3"></textarea>
 </div>
 
-<p class="small-note">Shipping is currently set at R99. You can change this amount in the code.</p>
+<p class="small-note">Shipping is currently set at R99.</p>
 
 <div style="text-align:center;margin-top:18px;">
 <button type="submit" class="submitbtn">Submit Order</button>
@@ -441,6 +462,25 @@ total: price * qty
 renderCart();
 }
 
+function addToCartNoSize(product, price, qtyId){
+const qty = parseInt(document.getElementById(qtyId).value);
+
+if(!qty || qty < 1){
+alert("Please enter a valid quantity.");
+return;
+}
+
+cart.push({
+product: product,
+price: price,
+size: "",
+qty: qty,
+total: price * qty
+});
+
+renderCart();
+}
+
 function removeItem(index){
 cart.splice(index,1);
 renderCart();
@@ -452,13 +492,12 @@ const cartItems = document.getElementById("cartItems");
 if(cart.length === 0){
 cartItems.innerHTML = '<p style="text-align:center;">No items added yet.</p>';
 }
-
 else{
 cartItems.innerHTML = cart.map((item,index) => `
 <div class="cart-item">
 <div>
 <strong>${item.product}</strong><br>
-Size: ${item.size}<br>
+${item.size ? "Size: " + item.size + "<br>" : ""}
 Qty: ${item.qty}<br>
 Price: R${item.price} each<br>
 Item Total: R${item.total}
@@ -496,7 +535,8 @@ const shipping = SHIPPING_COST;
 const grandTotal = subtotal + shipping;
 
 let summary = cart.map((item,index) => {
-return `${index + 1}. ${item.product}, Size: ${item.size}, Qty: ${item.qty}, Price: R${item.price}, Item Total: R${item.total}`;
+let sizeText = item.size ? `, Size: ${item.size}` : "";
+return `${index + 1}. ${item.product}${sizeText}, Qty: ${item.qty}, Price: R${item.price}, Item Total: R${item.total}`;
 }).join("\n");
 
 summary += `\n\nProducts Total: R${subtotal}`;
