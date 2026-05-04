@@ -8,16 +8,12 @@
 <meta name="theme-color" content="#ffd000">
 
 <style>
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background-image:
-linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-url("duck-duck.jpg");
+font-family:Arial,sans-serif;
+background-image:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("duck-duck.jpg");
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
@@ -31,14 +27,9 @@ background:rgba(0,0,0,0.35);
 padding:20px 12px 40px 12px;
 }
 
-.topbar{
-max-width:1200px;
-margin:0 auto 20px auto;
-display:flex;
-justify-content:center;
-}
+.topbar{text-align:center;margin-bottom:20px;}
 
-.backbtn{
+.backbtn,.buybtn,.submitbtn{
 display:inline-block;
 padding:12px 24px;
 background:#ffd000;
@@ -47,22 +38,22 @@ text-decoration:none;
 border-radius:12px;
 font-weight:bold;
 font-size:15px;
-box-shadow:0 4px 10px rgba(0,0,0,0.35);
+border:none;
+cursor:pointer;
 }
 
-.backbtn:hover{
-background:#ffb700;
-}
+.backbtn:hover,.buybtn:hover,.submitbtn:hover{background:#ffb700;}
 
-.hero{
+.hero,.section,.cart-box{
 max-width:1200px;
-margin:0 auto 30px auto;
-text-align:center;
+margin:0 auto 28px auto;
 background:rgba(0,0,0,0.35);
 border-radius:24px;
-padding:30px 20px;
+padding:26px 18px;
 box-shadow:0 8px 24px rgba(0,0,0,0.35);
 }
+
+.hero{text-align:center;}
 
 .hero h1{
 margin:0 0 10px 0;
@@ -71,20 +62,7 @@ line-height:1.05;
 color:#ffd000;
 }
 
-.hero p{
-margin:0;
-font-size:20px;
-color:white;
-}
-
-.section{
-max-width:1200px;
-margin:0 auto 28px auto;
-background:rgba(0,0,0,0.35);
-border-radius:24px;
-padding:26px 18px 24px 18px;
-box-shadow:0 8px 24px rgba(0,0,0,0.35);
-}
+.hero p{margin:0;font-size:20px;}
 
 .section-title{
 text-align:center;
@@ -96,18 +74,17 @@ margin:0 0 8px 0;
 .section-subtitle{
 text-align:center;
 font-size:16px;
-color:white;
 margin:0 0 24px 0;
 }
 
 .products{
 display:grid;
-grid-template-columns:repeat(3, 1fr);
+grid-template-columns:repeat(3,1fr);
 gap:20px;
 }
 
 .products.two{
-grid-template-columns:repeat(2, 1fr);
+grid-template-columns:repeat(2,1fr);
 max-width:820px;
 margin:0 auto;
 }
@@ -117,9 +94,6 @@ background:rgba(255,255,255,0.08);
 border-radius:20px;
 overflow:hidden;
 box-shadow:0 6px 16px rgba(0,0,0,0.3);
-display:flex;
-flex-direction:column;
-justify-content:space-between;
 }
 
 .product-image{
@@ -154,7 +128,6 @@ color:#ffd000;
 margin:0 0 14px 0;
 font-size:15px;
 line-height:1.5;
-color:white;
 min-height:44px;
 }
 
@@ -162,234 +135,378 @@ min-height:44px;
 display:block;
 font-size:22px;
 font-weight:bold;
-color:#ffffff;
 margin-bottom:14px;
 }
 
-.buybtn{
-display:inline-block;
-padding:12px 20px;
-background:#ffd000;
-color:black;
-text-decoration:none;
-border-radius:12px;
-font-weight:bold;
+.product-controls{
+display:grid;
+gap:10px;
+margin-bottom:14px;
+}
+
+select,input,textarea{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
 font-size:15px;
-min-width:180px;
 }
 
-.buybtn:hover{
-background:#ffb700;
-}
-
-.note-box{
-max-width:1200px;
-margin:0 auto;
-background:rgba(0,0,0,0.35);
-border-radius:24px;
-padding:20px;
+.qty-input{
 text-align:center;
-box-shadow:0 8px 24px rgba(0,0,0,0.35);
 }
 
-.note-box h3{
-margin:0 0 10px 0;
+.cart-box h2{
+text-align:center;
 color:#ffd000;
-font-size:24px;
-}
-
-.note-box p{
-margin:0;
-font-size:15px;
-line-height:1.6;
-}
-
-@media (max-width: 900px){
-.hero h1{
-font-size:42px;
-}
-
-.products{
-grid-template-columns:1fr;
-}
-
-.products.two{
-grid-template-columns:1fr;
-max-width:100%;
-}
-
-.product-image{
-min-height:280px;
-}
-
-.product-image img{
-max-height:250px;
-}
-}
-
-@media (max-width: 600px){
-.hero{
-padding:24px 16px;
-}
-
-.hero h1{
 font-size:34px;
+margin:0 0 18px 0;
 }
 
-.hero p{
-font-size:17px;
+.cart-item{
+display:grid;
+grid-template-columns:1fr auto;
+gap:10px;
+background:rgba(255,255,255,0.08);
+padding:12px;
+border-radius:12px;
+margin-bottom:10px;
 }
 
-.section{
-padding:22px 14px 20px 14px;
+.removebtn{
+background:#ff4444;
+color:white;
+border:none;
+border-radius:10px;
+padding:8px 12px;
+cursor:pointer;
+font-weight:bold;
 }
 
-.section-title{
-font-size:28px;
+.total-line{
+display:flex;
+justify-content:space-between;
+font-size:18px;
+margin:8px 0;
 }
 
-.product-info h3{
-font-size:22px;
+.grand-total{
+font-size:24px;
+font-weight:bold;
+color:#ffd000;
+border-top:1px solid rgba(255,255,255,0.25);
+padding-top:12px;
+margin-top:12px;
 }
 
-.buybtn{
-min-width:160px;
+.customer-form{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+margin-top:22px;
+}
+
+.customer-form .full{grid-column:1 / -1;}
+
+.small-note{
 font-size:14px;
+line-height:1.5;
+opacity:0.9;
+text-align:center;
+margin-top:14px;
 }
+
+@media(max-width:900px){
+.hero h1{font-size:42px;}
+.products,.products.two{grid-template-columns:1fr;max-width:100%;}
+.customer-form{grid-template-columns:1fr;}
+.product-image{min-height:280px;}
+.product-image img{max-height:250px;}
+}
+
+@media(max-width:600px){
+.hero h1{font-size:34px;}
+.hero p{font-size:17px;}
+.section-title,.cart-box h2{font-size:28px;}
 }
 </style>
 </head>
-<body>
 
+<body>
 <div class="page-overlay">
 
-  <div class="topbar">
-    <a href="index.html" class="backbtn">⬅ Back to Radio</a>
-  </div>
+<div class="topbar">
+<a href="index.html" class="backbtn">⬅ Back to Radio</a>
+</div>
 
-  <div class="hero">
-    <h1>Duck Duck Radio Merchandise Coming Soon</h1>
-    <p>Fun gear for loyal listeners, local legends, and everyone who loves the sound of Stilbaai.</p>
-  </div>
+<div class="hero">
+<h1>Duck Duck Radio Merchandise</h1>
+<p>Order your official Duck Duck Radio gear below.</p>
+</div>
 
-  <div class="section">
-    <h2 class="section-title">Hoodies</h2>
-    <p class="section-subtitle">Warm, bold, and full of Duck Duck attitude.</p>
+<div class="section">
+<h2 class="section-title">Hoodies</h2>
+<p class="section-subtitle">Warm, bold, and full of Duck Duck attitude.</p>
+<div class="products">
 
-    <div class="products">
-      <div class="product-card">
-        <div class="product-image">
-          <img src="hoodie1.png" alt="Duck Duck Radio Hoodie 1">
-        </div>
-        <div class="product-info">
-          <h3>Classic Navy Hoodie</h3>
-          <p>The signature Duck Duck Radio hoodie, clean, bold, and made to stand out.</p>
-          <span class="price">R549</span>
-          <a href="#" class="buybtn">Order This Hoodie</a>
-        </div>
-      </div>
+<div class="product-card">
+<div class="product-image"><img src="hoodie1.png" alt="Classic Navy Hoodie"></div>
+<div class="product-info">
+<h3>Classic Navy Hoodie</h3>
+<p>The signature Duck Duck Radio hoodie, clean, bold, and made to stand out.</p>
+<span class="price">R549</span>
+<div class="product-controls">
+<select id="size-hoodie1"><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select>
+<input id="qty-hoodie1" class="qty-input" type="number" min="1" value="1">
+</div>
+<button class="buybtn" onclick="addToCart('Classic Navy Hoodie',549,'size-hoodie1','qty-hoodie1')">Add to Order</button>
+</div>
+</div>
 
-      <div class="product-card">
-        <div class="product-image">
-          <img src="hoodie2.png" alt="Duck Duck Radio Hoodie 2">
-        </div>
-        <div class="product-info">
-          <h3>Sunset Vibes Hoodie</h3>
-          <p>A fun, energetic hoodie design that fits the station’s playful coastal brand.</p>
-          <span class="price">R549</span>
-          <a href="#" class="buybtn">Order This Hoodie</a>
-        </div>
-      </div>
+<div class="product-card">
+<div class="product-image"><img src="hoodie2.png" alt="Sunset Vibes Hoodie"></div>
+<div class="product-info">
+<h3>Sunset Vibes Hoodie</h3>
+<p>A fun, energetic hoodie design that fits the station’s playful coastal brand.</p>
+<span class="price">R549</span>
+<div class="product-controls">
+<select id="size-hoodie2"><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select>
+<input id="qty-hoodie2" class="qty-input" type="number" min="1" value="1">
+</div>
+<button class="buybtn" onclick="addToCart('Sunset Vibes Hoodie',549,'size-hoodie2','qty-hoodie2')">Add to Order</button>
+</div>
+</div>
 
-      <div class="product-card">
-        <div class="product-image">
-          <img src="hoodie3.png" alt="Duck Duck Radio Hoodie 3">
-        </div>
-        <div class="product-info">
-          <h3>Limited Edition Hoodie</h3>
-          <p>For the real fans who want something a little more exclusive and eye-catching.</p>
-          <span class="price">R549</span>
-          <a href="#" class="buybtn">Order This Hoodie</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">Caps</h2>
-    <p class="section-subtitle">Cool caps for sunny days, beach drives, and everyday style.</p>
-
-    <div class="products">
-      <div class="product-card">
-        <div class="product-image">
-          <img src="cap1.png" alt="Duck Duck Radio Cap 1">
-        </div>
-        <div class="product-info">
-          <h3>Navy Duck Cap</h3>
-          <p>A warm earthy look with the bold Duck Duck Radio logo front and center.</p>
-          <span class="price">R249</span>
-          <a href="#" class="buybtn">Order This Cap</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">
-          <img src="cap2.png" alt="Duck Duck Radio Cap 2">
-        </div>
-        <div class="product-info">
-          <h3>Brown Duck Cap</h3>
-          <p>A clean and stylish brown cap that works with almost anything.</p>
-          <span class="price">R249</span>
-          <a href="#" class="buybtn">Order This Cap</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">
-          <img src="cap3.png" alt="Duck Duck Radio Cap 3">
-        </div>
-        <div class="product-info">
-          <h3>Black Duck Cap</h3>
-          <p>A premium version for those who want a sporty, standout Duck Duck look.</p>
-          <span class="price">R249</span>
-          <a href="#" class="buybtn">Order This Cap</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">Coffee Mugs</h2>
-    <p class="section-subtitle">Start the morning with coffee and Duck Duck Radio.</p>
-
-    <div class="products two">
-      <div class="product-card">
-        <div class="product-image">
-          <img src="mug1.png" alt="Duck Duck Radio Mug 1">
-        </div>
-        <div class="product-info">
-          <h3>Classic Duck Mug</h3>
-          <p>A cheerful mug design for home, studio, office, or gift giving.</p>
-          <span class="price">R100</span>
-          <a href="#" class="buybtn">Order This Mug</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">
-          <img src="mug2.png" alt="Duck Duck Radio Mug 2">
-        </div>
-        <div class="product-info">
-          <h3>Morning Show Mug</h3>
-          <p>A fun mug for listeners who like their coffee hot and their radio loud.</p>
-          <span class="price">R100</span>
-          <a href="#" class="buybtn">Order This Mug</a>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="product-card">
+<div class="product-image"><img src="hoodie3.png" alt="Limited Edition Hoodie"></div>
+<div class="product-info">
+<h3>Limited Edition Hoodie</h3>
+<p>For the real fans who want something more exclusive and eye-catching.</p>
+<span class="price">R549</span>
+<div class="product-controls">
+<select id="size-hoodie3"><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select>
+<input id="qty-hoodie3" class="qty-input" type="number" min="1" value="1">
+</div>
+<button class="buybtn" onclick="addToCart('Limited Edition Hoodie',549,'size-hoodie3','qty-hoodie3')">Add to Order</button>
+</div>
+</div>
 
 </div>
+</div>
+
+<div class="section">
+<h2 class="section-title">Caps</h2>
+<p class="section-subtitle">Cool caps for sunny days, beach drives, and everyday style.</p>
+<div class="products">
+
+<div class="product-card">
+<div class="product-image"><img src="cap1.png" alt="Navy Duck Cap"></div>
+<div class="product-info">
+<h3>Navy Duck Cap</h3>
+<p>A bold Duck Duck Radio cap for everyday wear.</p>
+<span class="price">R249</span>
+<div class="product-controls">
+<select id="size-cap1"><option>One Size</option></select>
+<input id="qty-cap1" class="qty-input" type="number" min="1" value="1">
+</div>
+<button class="buybtn" onclick="addToCart('Navy Duck Cap',249,'size-cap1','qty-cap1')">Add to Order</button>
+</div>
+</div>
+
+<div class="product-card">
+<div class="product-image"><img src="cap2.png" alt="Brown Duck Cap"></div>
+<div class="product-info">
+<h3>Brown Duck Cap</h3>
+<p>A clean and stylish brown cap that works with almost anything.</p>
+<span class="price">R249</span>
+<div class="product-controls">
+<select id="size-cap2"><option>One Size</option></select>
+<input id="qty-cap2" class="qty-input" type="number" min="1" value="1">
+</div>
+<button class="buybtn" onclick="addToCart('Brown Duck Cap',249,'size-cap2','qty-cap2')">Add to Order</button>
+</div>
+</div>
+
+<div class="product-card">
+<div class="product-image"><img src="cap3.png" alt="Black Duck Cap"></div>
+<div class="product-info">
+<h3>Black Duck Cap</h3>
+<p>A premium cap for a sporty Duck Duck look.</p>
+<span class="price">R249</span>
+<div class="product-controls">
+<select id="size-cap3"><option>One Size</option></select>
+<input id="qty-cap3" class="qty-input" type="number" min="1" value="1">
+</div>
+<button class="buybtn" onclick="addToCart('Black Duck Cap',249,'size-cap3','qty-cap3')">Add to Order</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">Coffee Mugs</h2>
+<p class="section-subtitle">Start the morning with coffee and Duck Duck Radio.</p>
+<div class="products two">
+
+<div class="product-card">
+<div class="product-image"><img src="mug1.png" alt="Classic Duck Mug"></div>
+<div class="product-info">
+<h3>Classic Duck Mug</h3>
+<p>A cheerful mug design for home, studio, office, or gift giving.</p>
+<span class="price">R100</span>
+<div class="product-controls">
+<select id="size-mug1"><option>Standard Mug</option></select>
+<input id="qty-mug1" class="qty-input" type="number" min="1" value="1">
+</div>
+<button class="buybtn" onclick="addToCart('Classic Duck Mug',100,'size-mug1','qty-mug1')">Add to Order</button>
+</div>
+</div>
+
+<div class="product-card">
+<div class="product-image"><img src="mug2.png" alt="Morning Show Mug"></div>
+<div class="product-info">
+<h3>Morning Show Mug</h3>
+<p>A fun mug for listeners who like their coffee hot and their radio loud.</p>
+<span class="price">R100</span>
+<div class="product-controls">
+<select id="size-mug2"><option>Standard Mug</option></select>
+<input id="qty-mug2" class="qty-input" type="number" min="1" value="1">
+</div>
+<button class="buybtn" onclick="addToCart('Morning Show Mug',100,'size-mug2','qty-mug2')">Add to Order</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<form class="cart-box" action="https://formsubmit.co/duckduckradio@gmail.com" method="POST" onsubmit="return prepareOrder()">
+<h2>Your Order</h2>
+
+<div id="cartItems">
+<p style="text-align:center;">No items added yet.</p>
+</div>
+
+<div class="total-line"><span>Products Total:</span><span id="subtotalDisplay">R0</span></div>
+<div class="total-line"><span>Shipping:</span><span id="shippingDisplay">R0</span></div>
+<div class="total-line grand-total"><span>Total:</span><span id="grandTotalDisplay">R0</span></div>
+
+<input type="hidden" name="_subject" value="New Duck Duck Radio Merchandise Order">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+
+<textarea name="Order Summary" id="orderSummary" class="full" style="display:none;"></textarea>
+<input type="hidden" name="Products Total" id="productsTotalField">
+<input type="hidden" name="Shipping" id="shippingField">
+<input type="hidden" name="Grand Total" id="grandTotalField">
+
+<div class="customer-form">
+<input type="text" name="Customer Name" placeholder="Your Name" required>
+<input type="email" name="Customer Email" placeholder="Your Email" required>
+<input type="tel" name="Customer Phone" placeholder="Your Phone Number" required>
+<textarea class="full" name="Delivery Address" placeholder="Delivery Address" rows="4" required></textarea>
+<textarea class="full" name="Special Notes" placeholder="Special notes, optional" rows="3"></textarea>
+</div>
+
+<p class="small-note">Shipping is currently set at R99. You can change this amount in the code.</p>
+
+<div style="text-align:center;margin-top:18px;">
+<button type="submit" class="submitbtn">Submit Order</button>
+</div>
+</form>
+
+</div>
+
+<script>
+let cart = [];
+const SHIPPING_COST = 99;
+
+function addToCart(product, price, sizeId, qtyId){
+const size = document.getElementById(sizeId).value;
+const qty = parseInt(document.getElementById(qtyId).value);
+
+if(!qty || qty < 1){
+alert("Please enter a valid quantity.");
+return;
+}
+
+cart.push({
+product: product,
+price: price,
+size: size,
+qty: qty,
+total: price * qty
+});
+
+renderCart();
+}
+
+function removeItem(index){
+cart.splice(index,1);
+renderCart();
+}
+
+function renderCart(){
+const cartItems = document.getElementById("cartItems");
+
+if(cart.length === 0){
+cartItems.innerHTML = '<p style="text-align:center;">No items added yet.</p>';
+}
+
+else{
+cartItems.innerHTML = cart.map((item,index) => `
+<div class="cart-item">
+<div>
+<strong>${item.product}</strong><br>
+Size: ${item.size}<br>
+Qty: ${item.qty}<br>
+Price: R${item.price} each<br>
+Item Total: R${item.total}
+</div>
+<button type="button" class="removebtn" onclick="removeItem(${index})">Remove</button>
+</div>
+`).join("");
+}
+
+updateTotals();
+}
+
+function updateTotals(){
+const subtotal = cart.reduce((sum,item) => sum + item.total,0);
+const shipping = subtotal > 0 ? SHIPPING_COST : 0;
+const grandTotal = subtotal + shipping;
+
+document.getElementById("subtotalDisplay").innerText = "R" + subtotal;
+document.getElementById("shippingDisplay").innerText = "R" + shipping;
+document.getElementById("grandTotalDisplay").innerText = "R" + grandTotal;
+
+document.getElementById("productsTotalField").value = "R" + subtotal;
+document.getElementById("shippingField").value = "R" + shipping;
+document.getElementById("grandTotalField").value = "R" + grandTotal;
+}
+
+function prepareOrder(){
+if(cart.length === 0){
+alert("Please add at least one item to your order.");
+return false;
+}
+
+const subtotal = cart.reduce((sum,item) => sum + item.total,0);
+const shipping = SHIPPING_COST;
+const grandTotal = subtotal + shipping;
+
+let summary = cart.map((item,index) => {
+return `${index + 1}. ${item.product}, Size: ${item.size}, Qty: ${item.qty}, Price: R${item.price}, Item Total: R${item.total}`;
+}).join("\n");
+
+summary += `\n\nProducts Total: R${subtotal}`;
+summary += `\nShipping: R${shipping}`;
+summary += `\nGrand Total: R${grandTotal}`;
+
+document.getElementById("orderSummary").value = summary;
+return true;
+}
+</script>
 
 </body>
 </html>
