@@ -237,25 +237,16 @@ audio{
 display:none;
 }
 
-/* MOBILE FIX INCLUDED HERE */
 @media (max-width: 700px){
-
 .page-wrap{
 gap:6px;
+padding-left:6px;
+padding-right:6px;
 }
 
 .ads-column{
 width:72px;
 gap:8px;
-}
-
-/* THIS IS THE FIX */
-.ads-column:first-child{
-margin-left:10px;
-}
-
-.ads-column:last-child{
-margin-right:10px;
 }
 
 .ad-box{
@@ -291,7 +282,241 @@ min-width:200px;
 font-size:14px;
 padding:11px 16px;
 }
-
 }
 </style>
 </head>
+
+<body>
+
+<div class="page-wrap">
+
+  <div class="ads-column">
+
+    <a href="https://privelistea.co.za/" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="Privelistea.jpg" alt="Privelistea">
+    </a>
+
+    <a href="https://autozone.co.za/autozone-store/riversdal-autozone-member-store/" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="Autozone.png" alt="Autozone">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="simply.jpg" alt="Simply Wireless Stilbaai">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="steyns.jpg" alt="Steyns Mini Build">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="namo.jpeg" alt="Namo Health and Wellness">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="Spar.jpeg" alt="SPAR Stilbaai">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="Realty.jpg" alt="Realty 1">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="plumb.jpg" alt="Cape Plumbing and Bathroom Supplies">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="movin.jpg" alt="Still Movin">
+    </a>
+
+  </div>
+
+  <div class="center-wrap">
+    <div class="center-column">
+
+      <div class="top-menu">
+        <a href="program.html" class="linkbtn">Program</a>
+        <a href="gallery.html" class="linkbtn">Gallery</a>
+        <a href="merchandise.html" class="linkbtn">Merchandise</a>
+        <a href="interviews.html" class="linkbtn">Interviews</a>
+      </div>
+
+      <div class="box">
+
+        <div class="logo">Duck Duck Radio</div>
+        <div class="tagline">The Sound of Stilbaai</div>
+
+        <div class="livewrap">
+          <span id="livebadge" class="livebadge">OFF AIR</span>
+        </div>
+
+        <div class="nowplaying">
+          <strong>Now Playing</strong>
+          <div id="songtitle" class="songtitle">Loading song info...</div>
+        </div>
+
+        <button id="playbtn" class="playbutton" onclick="playRadio()">▶</button>
+
+        <div class="volume-wrap">
+          <label for="volumeSlider" class="volume-label">Volume</label>
+          <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.7" oninput="setVolume(this.value)">
+        </div>
+
+        <div class="links">
+          <a href="https://www.facebook.com/profile.php?id=61588258871807" target="_blank" rel="noopener noreferrer" class="linkbtn">Facebook</a>
+          <a href="https://wa.me/27825541599" target="_blank" rel="noopener noreferrer" class="linkbtn">Request a Song or Send a Message</a>
+          <button onclick="shareStation()" class="linkbtn">Share This Station</button>
+          <button onclick="addToHomeScreen()" class="linkbtn">📱 Add to Home Screen</button>
+        </div>
+
+        <audio id="radio"></audio>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="ads-column">
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="Kelders.jpg" alt="Stilbaai Kelders">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="peace.jpg" alt="Peace of Mind">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="Add.jpg" alt="Advertise Here">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="Add.jpg" alt="Advertise Here">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="Add.jpg" alt="Advertise Here">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="Add.jpg" alt="Advertise Here">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="Add.jpg" alt="Advertise Here">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="Add.jpg" alt="Advertise Here">
+    </a>
+
+    <a href="WEBSITE_HERE" target="_blank" rel="noopener noreferrer" class="ad-box">
+      <img src="Add.jpg" alt="Advertise Here">
+    </a>
+
+  </div>
+
+</div>
+
+<script>
+var radio = document.getElementById("radio");
+radio.volume = 0.7;
+
+var streamUrl = "https://sv2.famcast.co.za/stream/duckduck-radio";
+var isPlaying = false;
+var btn = document.getElementById("playbtn");
+var livebadge = document.getElementById("livebadge");
+var songtitle = document.getElementById("songtitle");
+
+radio.addEventListener("error", reconnectStream);
+radio.addEventListener("stalled", reconnectStream);
+radio.addEventListener("ended", reconnectStream);
+
+function reconnectStream(){
+  if (isPlaying){
+    setTimeout(function(){
+      radio.src = streamUrl + "?t=" + new Date().getTime();
+      radio.load();
+      radio.play().catch(function(){});
+    }, 3000);
+  }
+}
+
+function playRadio(){
+  if (!isPlaying){
+    radio.src = streamUrl;
+    radio.play();
+    btn.innerHTML = "❚❚";
+    btn.classList.add("playing");
+    livebadge.innerHTML = "LIVE";
+    livebadge.classList.add("on");
+    isPlaying = true;
+  } else {
+    radio.pause();
+    radio.removeAttribute("src");
+    radio.load();
+    btn.innerHTML = "▶";
+    btn.classList.remove("playing");
+    livebadge.innerHTML = "OFF AIR";
+    livebadge.classList.remove("on");
+    isPlaying = false;
+  }
+}
+
+async function updateSong(){
+  try{
+    const response = await fetch("https://sv2.famcast.co.za/json/stream/duckduck-radio");
+    const data = await response.json();
+
+    if (data.nowplaying){
+      songtitle.innerText = data.nowplaying;
+    } else {
+      songtitle.innerText = "Live stream";
+    }
+
+  } catch(e){
+    songtitle.innerText = "Now playing unavailable";
+  }
+}
+
+updateSong();
+setInterval(updateSong, 15000);
+
+function setVolume(value){
+  radio.volume = value;
+}
+
+async function shareStation(){
+  const shareData = {
+    title: "Duck Duck Radio",
+    text: "Listen live to Duck Duck Radio",
+    url: "https://duckduckradio.github.io/duckduckradio"
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch (err) {}
+  } else {
+    try {
+      await navigator.clipboard.writeText(shareData.url);
+      alert("Station link copied to clipboard");
+    } catch (err) {
+      alert("Copy this link: " + shareData.url);
+    }
+  }
+}
+
+function addToHomeScreen(){
+  var ua = navigator.userAgent.toLowerCase();
+
+  if (/iphone|ipad|ipod/.test(ua)) {
+    alert("On iPhone: open this site in Safari, tap Share, then tap Add to Home Screen.");
+  } else if (/android/.test(ua)) {
+    alert("On Android: tap your browser menu, then choose Add to Home screen.");
+  } else {
+    alert("Use your browser menu and select Add to Home Screen.");
+  }
+}
+</script>
+
+</body>
+</html>
